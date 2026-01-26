@@ -40,12 +40,12 @@ export const sectionSlotRecipe = defineSlotRecipe({
       }
     },
     title: {
-      color: "foreground.heading",
+      color: "text.primary",
       fontFamily: "heading",
       textAlign: "center"
     },
     description: {
-      color: "foreground.subtle",
+      color: "text.muted",
       fontSize: {
         base: "md",
         md: "lg"
@@ -177,18 +177,18 @@ export const sectionSlotRecipe = defineSlotRecipe({
     textColor: {
       light: {
         title: {
-          color: "foreground.heading"
+          color: "text.primary"
         },
         description: {
-          color: "foreground.content"
+          color: "text.secondary"
         }
       },
       dark: {
         title: {
-          color: "foreground.on-primary"
+          color: "text.inverse"
         },
         description: {
-          color: "foreground.on-primary/90"
+          color: "text.inverse/90"
         }
       }
     },

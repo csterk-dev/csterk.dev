@@ -1,5 +1,6 @@
 export * from "./color-mode";
 export * from "./Container";
+export * from "./Divider";
 export * from "./MDXComponents";
 export * from "./provider";
 export * from "./Section";

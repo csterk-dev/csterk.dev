@@ -1,13 +1,13 @@
 "use client"
 
-import { Button, Flex, FlexProps } from "@chakra-ui/react"
+import { Button, StackProps, VStack } from "@chakra-ui/react"
 import { FC } from "react"
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { isNavItemActive } from "@utils";
 
 
-type FooterLinksGroupProps = FlexProps & {
+type FooterLinksGroupProps = StackProps & {
   links: LinkItem[];
 };
 
@@ -16,7 +16,7 @@ export const FooterLinksGroup: FC<FooterLinksGroupProps> = ({ links, children, .
   const router = useRouter();
 
   return (
-    <Flex as="ul" flexDir="column" {...props}>
+    <VStack as="ul" {...props}>
       {links.map(item => (
         <li key={item.label}>
           <Button
@@ -33,6 +33,6 @@ export const FooterLinksGroup: FC<FooterLinksGroupProps> = ({ links, children, .
       ))}
       
       {children}
-    </Flex>
+    </VStack>
   );
 }

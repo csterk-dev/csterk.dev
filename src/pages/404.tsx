@@ -12,7 +12,7 @@ const Site404: NextPage = () => {
       <Container>
         <Text
           as="h1"
-          color="foreground.on-primary"
+          color="text.primary"
           fontFamily="heading"
           fontSize={{
             base: "lg",

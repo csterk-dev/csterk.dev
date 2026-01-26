@@ -7,6 +7,7 @@ export const cardSlotRecipe = defineSlotRecipe({
 
   base: {
     root: {
+      "--card-padding": "1rem",
       display: "flex",
       flexDirection: "column",
       position: "relative",

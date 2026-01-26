@@ -29,12 +29,12 @@ export const MDXComponents: Record<string, FC<any>> = {
   a: LinkWrapper,
   strong(props) {
     return (
-      <chakra.span color="foreground.accent-dark" fontWeight="bold" {...props} />
+      <chakra.span color="interactive.idle" fontWeight="bold" {...props} />
     )
   },
   em(props) {
     return (
-      <chakra.span color="foreground.body" fontWeight="bold" {...props} />
+      <chakra.span color="text.primary" fontWeight="bold" {...props} />
     )
   },
   ul(props) {
@@ -169,7 +169,7 @@ export const MDXComponents: Record<string, FC<any>> = {
   },
   code(props) {
     if (typeof props.children === "string") {
-      return <Box as="code" color="foreground.body" rounded="lg">{`\`${props.children}\``}</Box>;
+      return <Box as="code" color="text.primary" rounded="lg">{`\`${props.children}\``}</Box>;
     }
     return <code {...props} />;
   },

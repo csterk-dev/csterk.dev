@@ -1,4 +1,4 @@
-import { FaGithub, FaHouse, FaLinkedinIn } from "react-icons/fa6";
+import { FaFlask, FaGithub, FaHouse, FaLinkedinIn } from "react-icons/fa6";
 
 /*
  * Site Config Constants
@@ -22,12 +22,12 @@ export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csterk.dev"
  * Internal site hrefs: 
  */
 export const SITE_HOME_URL = "/";
-
+export const SITE_PLAYGROUND_URL = "/playground";
 
 /*
  * External company links: 
  */
-export const SOCIALS_LINKEDIN_URL = "https://www.linkedin.com/chris-sterk";
+export const SOCIALS_LINKEDIN_URL = "https://www.linkedin.com/in/chris-sterkenburg";
 export const SOCIALS_GITHUB_URL = "https://github.com/csterk-dev";
 
 /**
@@ -39,6 +39,12 @@ export const SITE_NAV_ITEMS: LinkItem[] = [
     icon: FaHouse,
     label: "Home",
     href: SITE_HOME_URL
+  },
+  {
+    key: "playground",
+    icon: FaFlask,
+    label: "Playground",
+    href: SITE_PLAYGROUND_URL
   }
 ];
 

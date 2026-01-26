@@ -46,7 +46,7 @@ const surfaceColors = defineSemanticTokens.colors({
  */
 const textColors = defineSemanticTokens.colors({
   primary: { value: "{colors.neutral.100}" },
-  secondary: { value: "{colors.neutral.300}" },
+  secondary: { value: "{colors.neutral.200}" },
   muted: { value: "{colors.neutral.400}" },
   disabled: { value: "{colors.neutral.500}" },
   inverse: { value: "{colors.neutral.900}" }
@@ -57,7 +57,7 @@ const textColors = defineSemanticTokens.colors({
  */
 const accentColors = defineSemanticTokens.colors({
   primary: { value: "{colors.brand.500}" },
-  secondary: { value: "{colors.brand.300}" },
+  secondary: { value: "{colors.brand.100}" },
   subtle: { value: "{colors.brand.700}" },
   muted: { value: "{colors.brand.800}" }
 });
@@ -67,7 +67,7 @@ const accentColors = defineSemanticTokens.colors({
  */
 const interactiveColors = defineSemanticTokens.colors({
   idle: { value: "{colors.brand.500}" },
-  hover: { value: "{colors.brand.400}" },
+  hover: { value: "{colors.brand.200}" },
   active: { value: "{colors.brand.300}" },
   focus: { value: "{colors.brand.400}" }
 });

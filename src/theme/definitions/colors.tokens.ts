@@ -4,7 +4,7 @@ import { defineTokens } from "@chakra-ui/react";
  * Futuristic Teal + Cool Neutral palettes
  * Inspired by neon-accented black & white sci-fi UI
  */
-export const _colors = defineTokens.colors({
+export const colors = defineTokens.colors({
   neutral: {
     white: { value: "#FFFFFF" },
     50: { value: "#F5F7FA" },
@@ -39,7 +39,7 @@ export const _colors = defineTokens.colors({
  * Halo Forerunner-inspired palette
  * Slightly greener / cyan-biased neon tones
  */
-export const colors = defineTokens.colors({
+export const _colors = defineTokens.colors({
   neutral: {
     white: { value: "#FFFFFF" },
     50: { value: "#F4F8F7" },

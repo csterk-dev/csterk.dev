@@ -25,7 +25,11 @@ const system = createSystem(defaultConfig, {
     body: {
       fontFamily: "body",
       minHeight: "100%",
-      bg: "surface.canvas",
+      background:
+        "radial-gradient(ellipse 100% 80% at 90% 20%, rgba(9, 110, 108, 0.05) 0%, transparent 50%), "
+        + "radial-gradient(ellipse 80% 60% at 10% 90%, rgba(8, 42, 94, 0.04) 0%, transparent 50%), "
+        + "radial-gradient(ellipse 140% 100% at 50% 50%, rgba(13, 59, 59, 0.03) 0%, transparent 60%), "
+        + "#090B0F",
       color: "text.primary",
       colorPalette: "neutral",
   
@@ -50,8 +54,8 @@ const system = createSystem(defaultConfig, {
 
     },
     "*::selection": {
-      bg: "accent.primary/30",
-      color: "foreground.inverted"
+      bg: "accent.secondary/100",
+      color: "text.inverse"
     },
     html: {
       height: "100%"

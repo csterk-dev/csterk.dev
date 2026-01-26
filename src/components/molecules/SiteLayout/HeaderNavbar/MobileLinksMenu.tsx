@@ -1,9 +1,9 @@
 "use client"
 
-import { Button, Drawer, IconButton, IconButtonProps, Portal, Separator, useBreakpointValue, useDisclosure, VisuallyHidden } from "@chakra-ui/react";
+import { Box, Button, Drawer, IconButton, IconButtonProps, Portal, Separator, useBreakpointValue, useDisclosure, VisuallyHidden } from "@chakra-ui/react";
 import { FC, useEffect } from "react"
 import { NavLinksGroup } from "./NavLinksGroup";
-import { FaBars } from "react-icons/fa6";
+import { FaBars, FaX } from "react-icons/fa6";
 
 type MobileLinksMenuProps = IconButtonProps;
 
@@ -22,8 +22,31 @@ export const MobileLinksMenu: FC<MobileLinksMenuProps> = (buttonProps) => {
   return (
     <Drawer.Root open={menu.open} placement="bottom" onOpenChange={(e) => menu.setOpen(e.open)}>
       <Drawer.Trigger asChild>
-        <IconButton variant="ghost" {...buttonProps}>
-          <FaBars />
+        <IconButton variant="tertiary" {...buttonProps}>
+          <Box
+            alignItems="center"
+            display="inline-flex"
+            justifyContent="center"
+            position="relative"
+          >
+            <Box animation={menu.open ? "icon-fade-out" : "icon-fade-in"} pointerEvents={menu.open ? "none" : "auto"}>
+              <FaBars />
+            </Box>
+            <Box
+              alignItems="center"
+              animation={menu.open ? "icon-fade-in" : "icon-fade-out"}
+              bottom={0}
+              display="flex"
+              justifyContent="center"
+              left={0}
+              pointerEvents={menu.open ? "auto" : "none"}
+              position="absolute"
+              right={0}
+              top={0}
+            >
+              <FaX />
+            </Box>
+          </Box>
         </IconButton>
       </Drawer.Trigger>
       <Portal>
@@ -31,11 +54,11 @@ export const MobileLinksMenu: FC<MobileLinksMenuProps> = (buttonProps) => {
         <Drawer.Positioner>
           <Drawer.Content>
             <Drawer.Body pt="6" spaceY="3">
-              <NavLinksGroup 
-                flexDir="column" 
-                gap={2} 
+              <NavLinksGroup
+                flexDir="column"
+                gap={2}
                 handleLinkOnClick={menu.onClose}
-                showHomeLink 
+                showHomeLink
               />
               <Separator />
               <Button

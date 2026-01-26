@@ -1,4 +1,4 @@
-import { Flex, HStack, Stack, StackProps, Text } from "@chakra-ui/react";
+import { Flex, HStack, Stack, StackProps, VStack, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import { SITE_NAV_ITEMS, SITE_SOCIAL_ITEMS } from "@constants";
 import { FooterLinksGroup } from "./LinksGroup";
@@ -10,7 +10,6 @@ export const Footer: FC<StackProps> = (props) => {
   return (
     <Stack
       alignItems="center"
-      bg="surface.foreground"
       gap={8}
       pt={8}
       width="100%"
@@ -20,49 +19,50 @@ export const Footer: FC<StackProps> = (props) => {
         <Flex
           columnGap={4}
           flexWrap="wrap"
-          justifyContent="space-between"
+          justifyContent="space-evenly"
           maxW="8xl"
           mx="auto"
           rowGap={4}
           width="100%"
         >
-          <Stack minW="200px">
+          <VStack minW="200px">
             <Text
-              color="foreground.heading"
+              color="text.primary"
               fontFamily="heading"
               fontSize="2xl"
               fontWeight="bold"
+              textAlign="center"
             >
-              Company
+              Pages
             </Text>
 
             <FooterLinksGroup links={SITE_NAV_ITEMS} />
-          </Stack>
+          </VStack>
 
-          <Stack minW="200px">
+          <VStack minW="200px">
             <Text
-              color="foreground.heading"
+              color="text.primary"
               fontFamily="heading"
               fontSize="2xl"
               fontWeight="bold"
+              textAlign="center"
             >
-              Social
+              Socials
             </Text>
 
             <FooterLinksGroup links={SITE_SOCIAL_ITEMS} />
-          </Stack>
+          </VStack>
 
         </Flex>
       </Container>
 
 
       <HStack
-        bg="surface.foreground"
-        color="foreground.subtle"
+        color="text.muted"
         px={2}
         py={6}
       >
-        © 2026 Chris Sterk. All Rights Reserved
+        © 2026 Chris Sterkenburg. All Rights Reserved
       </HStack>
     </Stack>
   );

@@ -111,18 +111,18 @@ FloatingLabelInput.displayName = "FloatingLabelInput"
 
 const floatingStyles = defineStyle({
   pos: "absolute",
-  bg: "bg",
+  bg: "surface.canvas",
   px: "0.5",
   top: "2.5",
   insetStart: "3",
   fontWeight: "normal",
   pointerEvents: "none",
   transition: "position",
-  color: "fg.muted",
+  color: "text.primary",
   "&[data-float]": {
     top: "-3",
     insetStart: "2",
-    color: "fg"
+    color: "accent.secondary"
   },
   "&[data-has-icon]": {
     insetStart: "10"

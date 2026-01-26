@@ -7,7 +7,7 @@ import { system } from "@theme";
 export const Provider = (props: ColorModeProviderProps) => {
   return (
     <ChakraProvider value={system}>
-      <ColorModeProvider defaultTheme="light" {...props} />
+      <ColorModeProvider defaultTheme="dark" forcedTheme="dark" {...props} />
       <Toaster />
     </ChakraProvider>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 
-import { Button, Flex, FlexProps } from "@chakra-ui/react"
+import { Button, chakra, Flex, FlexProps } from "@chakra-ui/react"
 import { FC } from "react"
 import NextLink from "next/link";
 import { SITE_NAV_ITEMS } from "@constants";
@@ -25,16 +25,17 @@ export const NavLinksGroup: FC<LinksGroupProps> = ({ showHomeLink, handleLinkOnC
     <nav>
       <Flex alignItems="center" as="ul" {...props}>
         {navItems.map(item => (
-          <li key={item.key}>
+          <chakra.li key={item.key} w="100%">
             <Button
               aria-current={isNavItemActive(router.pathname, item.href) ? "page" : undefined}
               size={{
                 base: "lg",
                 md: "md"
               }}
-              variant="secondary"
+              variant="tertiary"
               w={{
                 base: "100%",
+                sm: "100%",
                 md: "unset"
               }}
               asChild
@@ -44,7 +45,7 @@ export const NavLinksGroup: FC<LinksGroupProps> = ({ showHomeLink, handleLinkOnC
                 {item.label}
               </NextLink>
             </Button>
-          </li>
+          </chakra.li>
         ))}
       </Flex>
     </nav>

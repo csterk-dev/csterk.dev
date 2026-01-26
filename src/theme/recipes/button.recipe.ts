@@ -60,7 +60,7 @@ export const buttonRecipe = defineRecipe({
 
       tertiary: {
         bg: "transparent",
-        color: "accent.primary",
+        color: "accent.secondary",
 
         _hover: {
           color: "interactive.hover",
