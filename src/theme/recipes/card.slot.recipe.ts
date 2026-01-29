@@ -49,7 +49,7 @@ export const cardSlotRecipe = defineSlotRecipe({
 
     description: {
       color: "text.secondary",
-      fontSize: "sm"
+      fontSize: "md"
     }
   },
 

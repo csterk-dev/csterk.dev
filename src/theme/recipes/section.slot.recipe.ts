@@ -47,8 +47,8 @@ export const sectionSlotRecipe = defineSlotRecipe({
     description: {
       color: "text.muted",
       fontSize: {
-        base: "md",
-        md: "lg"
+        base: "lg",
+        md: "xl"
       },
       lineHeight: "moderate",
       textAlign: "center"
