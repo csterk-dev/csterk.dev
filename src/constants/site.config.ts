@@ -248,7 +248,7 @@ export const HOME_TOOLKIT_TECH_STACK: TechStackGroup[] = [
   createTechStackGroup(
     "front-end",
     "Front-End",
-    "The tools, frameworks, and libraries I use to create beautiful, seamless user interfaces.",
+    "User interface tools, frameworks, and libraries I use to create beautiful, seamless experiences.",
     [
       "javascript",
       "typescript",
