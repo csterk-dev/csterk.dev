@@ -23,12 +23,13 @@ import { buttonRecipe, cardSlotRecipe, dividerRecipe, fieldSlotRecipe, sectionSl
 const system = createSystem(defaultConfig, {
   globalCss: {
     body: {
+      fontSize: "lg",
       fontFamily: "body",
       minHeight: "100%",
       background:
-        "radial-gradient(ellipse 100% 80% at 90% 20%, rgba(9, 110, 108, 0.05) 0%, transparent 50%), "
-        + "radial-gradient(ellipse 80% 60% at 10% 90%, rgba(8, 42, 94, 0.04) 0%, transparent 50%), "
-        + "radial-gradient(ellipse 140% 100% at 50% 50%, rgba(13, 59, 59, 0.03) 0%, transparent 60%), "
+        "radial-gradient(ellipse 100% 80% at 90% 20%, rgba(37, 156, 154, 0.1) 0%, transparent 50%), "
+        + "radial-gradient(ellipse 80% 60% at 10% 90%, rgba(27, 72, 138, 0.1) 0%, transparent 50%), "
+        + "radial-gradient(ellipse 140% 100% at 50% 50%, rgba(50, 127, 127, 0.1) 0%, transparent 60%), "
         + "#090B0F",
       color: "text.primary",
       colorPalette: "neutral",

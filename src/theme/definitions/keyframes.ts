@@ -25,6 +25,16 @@ export const keyframes = defineKeyframes({
     "0%": { transform: "translateX(0)" },
     "100%": { transform: "translateX(-50%)" }
   },
+  "hero-word-fade": {
+    "0%": {
+      opacity: "0",
+      transform: "translateY(4px)" 
+    },
+    "100%": {
+      opacity: "1",
+      transform: "translateY(0)" 
+    }
+  },
   "fade-in": {
     "0%": { opacity: "0" },
     "100%": { opacity: "1" }

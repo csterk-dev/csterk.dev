@@ -6,3 +6,16 @@ type LinkItem = {
   href: string;
   icon?: import("react").ElementType;
 };
+
+type TechStackItem = {
+  key: string;
+  name: string;
+  logoSource: string;
+}
+
+type TechStackGroup = {
+  key: string;
+  title: string;
+  description: string;
+  items: TechStackItem[]
+}
