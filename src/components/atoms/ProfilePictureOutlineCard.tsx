@@ -3,11 +3,14 @@ import { Box, chakra, Flex } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 
+const IMAGE_WIDTH = 1425;
+const IMAGE_HEIGHT = 1816;
+
 export const ProfilePictureOutlineCard: FC = () => (
   <Flex
+    aspectRatio={`${IMAGE_WIDTH} / ${IMAGE_HEIGHT}`}
     borderRadius="md"
     className="group"
-    h="500px"
     justify="center"
     maxW="400px"
     overflow="hidden"
@@ -56,17 +59,22 @@ export const ProfilePictureOutlineCard: FC = () => (
       />
     </chakra.svg>
 
-    <Box borderRadius="md" overflow="hidden">
+    <Box
+      borderRadius="md"
+      height="100%"
+      overflow="hidden"
+      position="relative"
+      width="100%"
+    >
       <NextImage
         alt="Profile picture of Chris"
-        height={1816}
+        sizes="(max-width: 400px) 100vw, 400px"
         src="/static/images/chris.png"
         style={{
           objectFit: "contain",
-          userSelect: "none",
-          width: "100%"
+          userSelect: "none"
         }}
-        width={1425}
+        fill
       />
     </Box>
   </Flex>

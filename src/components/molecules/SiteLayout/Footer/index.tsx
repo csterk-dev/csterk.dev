@@ -1,4 +1,4 @@
-import { Flex, HStack, Stack, StackProps, VStack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Stack, StackProps, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 import { SITE_NAV_ITEMS, SITE_SOCIAL_ITEMS } from "@constants";
 import { FooterLinksGroup } from "./LinksGroup";
@@ -57,13 +57,19 @@ export const Footer: FC<StackProps> = (props) => {
       </Container>
 
 
-      <HStack
-        color="text.muted"
-        px={2}
-        py={6}
-      >
-        © 2026 Chris Sterkenburg. All Rights Reserved
-      </HStack>
+      <VStack gap={4} px={2} py={6}>
+        <Text
+          color="text.secondary"
+          fontFamily="heading"
+          fontSize="lg"
+          textAlign="center"
+        >
+          Let's build something that delights.
+        </Text>
+        <HStack color="text.muted">
+          © 2026 Chris Sterkenburg. All Rights Reserved
+        </HStack>
+      </VStack>
     </Stack>
   );
 }

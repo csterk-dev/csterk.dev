@@ -1,43 +1,53 @@
 import { Fragment } from "react";
-import { Container, Section, SEOConfig } from "@atoms";
-import { Box, Table, Text, VStack } from "@chakra-ui/react";
+import { Container, Hero, ProfilePictureOutlineCard, ProjectCarousel, type ProjectItem, Section, SEOConfig } from "@atoms";
+import { CoreCapabilitiesGrid } from "@molecules";
+import { Box, Flex, Text, Timeline, VStack } from "@chakra-ui/react";
+import { HOME_TOOLKIT_TECH_STACK } from "@constants";
+import { ToolkitTechGrid } from "@organisms";
 import { NextPage } from "next";
 
+const projects: ProjectItem[] = [
+  {
+    name: "R Jukebox",
+    client: "Personal Project",
+    tags: ["Personal Passion Project", "React", "UI/UX Design"],
+    image: "https://images.unsplash.com/photo-1656433031375-5042f5afe894?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2371"
+  },
+  {
+    name: "Pocket Support",
+    client: "Client Project",
+    tags: ["Complex Logic/UI", "React", "State Management"],
+    image: "https://images.unsplash.com/photo-1587466412525-87497b34fc88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2673"
+  },
+  {
+    name: "USE Software Company Rebrand, Website & Marketing",
+    client: "USE Software",
+    tags: ["Brand/Marketing", "Web Design", "Rebranding"],
+    image: "https://images.unsplash.com/photo-1629581688635-5d88654e5bdd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2831"
+  }
+];
+
+
+
 const Home: NextPage = () => {
+  const frontEndGroup = HOME_TOOLKIT_TECH_STACK.find(group => group.key === "front-end");
+  const designGroup = HOME_TOOLKIT_TECH_STACK.find(group => group.key === "design");
+  const backEndDataGroup = HOME_TOOLKIT_TECH_STACK.find(group => group.key === "back-end-data");
+  const methodologyGroup = HOME_TOOLKIT_TECH_STACK.find(group => group.key === "methodology");
+
   return (
     <Fragment>
       <SEOConfig title="Home" />
       <Container>
         {/* 1. Hero */}
-        <Section
-          bodyContent={
-            <Text
-              color="text.secondary"
-              fontSize={{
-                base: "lg",
-                md: "xl"
-              }}
-              textAlign="center"
-            >
-              Designing software that doesn&apos;t just work—it delights.
-            </Text>
-          }
-          contentAlign="center"
-          ctaLabel="Learn more"
-          ctaOnClick="#about"
-          description="Creative Front-End Wizard & UI/UX Designer"
-          descriptionTextStyle="large"
-          id="hero"
-          title="Chris Sterkenburg"
-          titleRole="h1"
-        />
+        <Hero ctaScrollToId="about" />
 
-        {/* 2. About Me */}
+        {/* 2. About Me: The "Under the Hood" Story */}
         <Section
           bodyContent={
             <VStack align="stretch" gap={4} textAlign="start">
               <Text color="text.secondary" lineHeight="moderate">
-                G&apos;day, I&apos;m Chris. I&apos;m a Front-End Developer and UI/UX Designer who views code as a
+                G'day, I'm Chris. I'm a Front-End Developer and UI/UX Designer who views code as a
                 medium for creativity. My journey began with a curiosity about video games, which quickly merged
                 with my background in film and multimedia.
               </Text>
@@ -45,148 +55,244 @@ const Home: NextPage = () => {
                 With a double degree in
                 {" "}
                 <Text as="span" fontWeight="semibold">
-                  Computer Science and Creative Industries (Music &amp; Sound)
+                  Computer Science and Creative Industries (Music & Sound)
                 </Text>
-                , I bridge the gap between technical engineering and creative design. Whether I&apos;m drumming
+                , I bridge the gap between technical engineering and creative design. Whether I'm drumming
                 in a band, editing film, or building a React app, my goal remains the same: to remove clunky
-                &quot;pain points&quot; and replace them with experiences that delight.
+                "pain points" and replace them with experiences that delight.
               </Text>
             </VStack>
           }
+          childrenPlacement={{
+            base: "bottom",
+            lg: "right"
+          }}
           contentAlign="left"
-          description={"The \"origin story\":"}
           id="about"
-          title="About Me"
-        />
+          title="Where Logic Meets Artistry"
+        >
+          <Flex justifyContent="center" w="100%">
+            <ProfilePictureOutlineCard />
+          </Flex>
+        </Section>
 
-        {/* 3. The Creative Foundation */}
+        {/* 3. Featured Work (Project Gallery) */}
         <Section
-          bodyContent={
-            <VStack align="stretch" gap={4} textAlign="start">
-              <Text color="text.secondary" lineHeight="moderate">
-                My design philosophy didn&apos;t start at a keyboard; it started behind a camera lens. Earning my
-                Certificate III in Screen and Media gave me a foundational understanding of framing, lighting,
-                and visual communication.
-              </Text>
-              <Text color="text.secondary" lineHeight="moderate">
-                Working as a Camera Assistant for Titans TV, I learned how to capture live performances and tell
-                a story in real-time. This experience taught me that every frame matters—just as every pixel
-                matters in an interface. Today, I translate that same sense of rhythm, composition, and
-                &quot;visual flow&quot; from film into digital products that feel alive and intuitive.
-              </Text>
-            </VStack>
-          }
+          bodyContent={<ProjectCarousel mt={10} projects={projects} />}
           contentAlign="left"
-          description="From Behind the Lens to Behind the Code"
-          id="creative-foundation"
-          title="The Creative Foundation"
+          description="Explore my work with the following projects below:"
+          id="work"
+          title="Featured Work"
         />
 
         {/* 4. Core Capabilities */}
         <Section
-          bodyContent={
-            <VStack align="stretch" gap={5}>
-              <Box>
-                <Text as="span" fontWeight="semibold">The Full Product Lifecycle:</Text>
-                <Text as="span" color="text.secondary">
-                  {" "}
-                  Driving products from initial prototyping and high-fidelity mockups to final coding and
-                  deployment.
-                </Text>
-              </Box>
-              <Box>
-                <Text as="span" fontWeight="semibold">User-Centric Design:</Text>
-                <Text as="span" color="text.secondary">
-                  {" "}
-                  Removing friction points to ensure every interface is intuitive, accessible, and tailored
-                  to real needs.
-                </Text>
-              </Box>
-              <Box>
-                <Text as="span" fontWeight="semibold">Technical Engineering:</Text>
-                <Text as="span" color="text.secondary">
-                  {" "}
-                  Building responsive, scalable interfaces using
-                  {" "}
-                  <Text as="span" fontWeight="medium">React.js</Text>
-                  ,
-                  {" "}
-                  <Text as="span" fontWeight="medium">Next.js</Text>
-                  , and modern JavaScript frameworks.
-                </Text>
-              </Box>
-              <Box>
-                <Text as="span" fontWeight="semibold">Quality &amp; Testing:</Text>
-                <Text as="span" color="text.secondary">
-                  {" "}
-                  Rigorous testing and QA to ensure every product feels as good as it looks.
-                </Text>
-              </Box>
-              <Box>
-                <Text as="span" fontWeight="semibold">Strategic Collaboration:</Text>
-                <Text as="span" color="text.secondary">
-                  {" "}
-                  Liaising with clients to translate project goals into technical requirements and
-                  development timelines.
-                </Text>
-              </Box>
-            </VStack>
-          }
+          bodyContent={<CoreCapabilitiesGrid mt={10} />}
           contentAlign="left"
+          description="From prototyping to deployment—here's how I approach each project and what I bring to the table."
           id="capabilities"
           title="Core Capabilities"
         />
 
-        {/* 4. Professional Experience */}
+        {/* 5. The Toolkit (Capabilities & Technical Skills) */}
         <Section
           bodyContent={
-            <VStack align="stretch" gap={8}>
+            <ToolkitTechGrid
+              backEndDataGroup={backEndDataGroup}
+              designGroup={designGroup}
+              frontEndGroup={frontEndGroup}
+              methodologyGroup={methodologyGroup}
+              mt={10}
+            />
+          }
+          contentAlign="left"
+          description="The technologies and methods I use to build and design modern applications."
+          id="toolkit"
+          title="The Toolkit"
+        />
+
+        {/* 6. Experience & Education */}
+        <Section
+          bodyContent={
+            <VStack align="stretch" gap={8} mt={10}>
+              {/* Professional Experience */}
               <Box>
-                <Text fontFamily="heading" fontSize="lg" fontWeight="semibold">
-                  USE Software | Front-End Developer &amp; UI/UX Specialist
-                </Text>
-                <Text color="text.secondary" fontSize="sm" mt={1}>
-                  Sept 2022 – Present
-                </Text>
-                <Box
-                  as="ul"
-                  color="text.secondary"
-                  lineHeight="moderate"
-                  mt={3}
-                  pl={5}
+                <Text
+                  fontFamily="heading"
+                  fontSize="xl"
+                  fontWeight="semibold"
+                  mb={4}
                 >
-                  <Box as="li" mb={2}>Leading the UI/UX design and development for web and app-based programs.</Box>
-                  <Box as="li" mb={2}>Translating complex requirements into high-fidelity prototypes and testable designs.</Box>
-                  <Box as="li" mb={2}>Working within a Full Stack team to build modern, efficient applications in Agile and Waterfall environments.</Box>
-                  <Box as="li">Driving usability improvements by refining interfaces and enhancing the overall user experience.</Box>
-                </Box>
+                  Professional Experience
+                </Text>
+                <Timeline.Root colorPalette="brand">
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title fontFamily="heading" fontSize="lg" fontWeight="semibold">
+                        USE Software | Front-End Developer & UI/UX Specialist
+                      </Timeline.Title>
+                      <Timeline.Description color="text.secondary" fontSize="sm" mt={1}>
+                        2022 – Present
+                      </Timeline.Description>
+                      <Box
+                        as="ul"
+                        color="text.secondary"
+                        lineHeight="moderate"
+                        mt={3}
+                        pl={5}
+                      >
+                        <Box as="li" mb={2}>Leading the UI/UX design and development for web and app-based programs.</Box>
+                        <Box as="li" mb={2}>Translating complex requirements into high-fidelity prototypes and testable designs.</Box>
+                        <Box as="li" mb={2}>Working within a Full Stack team to build modern, efficient applications in Agile and Waterfall environments.</Box>
+                        <Box as="li">Driving usability improvements by refining interfaces and enhancing the overall user experience.</Box>
+                      </Box>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title fontFamily="heading" fontSize="lg" fontWeight="semibold">
+                        Hightro | Full Stack Developer Intern
+                      </Timeline.Title>
+                      <Timeline.Description color="text.secondary" fontSize="sm" mt={1}>
+                        2021 – 2022
+                      </Timeline.Description>
+                      <Box
+                        as="ul"
+                        color="text.secondary"
+                        lineHeight="moderate"
+                        mt={3}
+                        pl={5}
+                      >
+                        <Box as="li" mb={2}>Created and integrated custom APIs for bespoke solutions.</Box>
+                        <Box as="li">Identified and resolved bugs within existing projects to support continuous development.</Box>
+                      </Box>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                </Timeline.Root>
               </Box>
+
+              {/* Education */}
               <Box>
-                <Text fontFamily="heading" fontSize="lg" fontWeight="semibold">
-                  Hightro | Full Stack Developer Intern
-                </Text>
-                <Text color="text.secondary" fontSize="sm" mt={1}>
-                  Nov 2021 – Feb 2022
-                </Text>
-                <Box
-                  as="ul"
-                  color="text.secondary"
-                  lineHeight="moderate"
-                  mt={3}
-                  pl={5}
+                <Text
+                  fontFamily="heading"
+                  fontSize="xl"
+                  fontWeight="semibold"
+                  mb={4}
                 >
-                  <Box as="li" mb={2}>Created and integrated custom APIs for bespoke solutions.</Box>
-                  <Box as="li">Identified and resolved bugs within existing projects to support continuous development.</Box>
-                </Box>
+                  Educational Roots
+                </Text>
+                <Timeline.Root colorPalette="brand">
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title fontFamily="heading" fontSize="lg" fontWeight="semibold">
+                        Bachelor of Information Technology (Computer Science) & Bachelor of Creative Industries (Music & Sound)
+                      </Timeline.Title>
+                      <Timeline.Description color="text.secondary" fontSize="sm" mt={1}>
+                        Queensland University of Technology (QUT) | 2019 – 2022
+                      </Timeline.Description>
+                      <Box
+                        as="ul"
+                        color="text.secondary"
+                        lineHeight="moderate"
+                        mt={3}
+                        pl={5}
+                      >
+                        <Box as="li" mb={2}>
+                          <Text as="span" fontWeight="semibold">Academic Excellence:</Text>
+                          {" "}
+                          Recognised on the QUT Academic Dean's List from 2019 to 2022.
+                        </Box>
+                        <Box as="li" mb={2}>
+                          <Text as="span" fontWeight="semibold">The Intersection:</Text>
+                          {" "}
+                          This double degree allowed me to master rigorous software engineering principles while honing my creative instincts in sound design and performance.
+                        </Box>
+                        <Box as="li">
+                          <Text as="span" fontWeight="semibold">Relevance:</Text>
+                          {" "}
+                          I use this unique combination to bridge the gap between complex codebases and intuitive, sensory-rich user interfaces.
+                        </Box>
+                      </Box>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title fontFamily="heading" fontSize="lg" fontWeight="semibold">
+                        Certificate III in Screen & Media
+                      </Timeline.Title>
+                      <Timeline.Description color="text.secondary" fontSize="sm" mt={1}>
+                        Workskills / Titans TV | 2017 – 2018
+                      </Timeline.Description>
+                      <Box
+                        as="ul"
+                        color="text.secondary"
+                        lineHeight="moderate"
+                        mt={3}
+                        pl={5}
+                      >
+                        <Box as="li" mb={2}>
+                          <Text as="span" fontWeight="semibold">Visual Storytelling:</Text>
+                          {" "}
+                          Developed a foundational understanding of composition, lighting, and pacing through film and multimedia production.
+                        </Box>
+                        <Box as="li" mb={2}>
+                          <Text as="span" fontWeight="semibold">Industry Application:</Text>
+                          {" "}
+                          Served as a Camera Assistant for Titans TV, assisting in live recordings for Gold Coast Titans pre-show performances.
+                        </Box>
+                        <Box as="li">
+                          <Text as="span" fontWeight="semibold">Impact on UX:</Text>
+                          {" "}
+                          My roots in media allow me to view digital interfaces through a cinematic lens—prioritising visual flow and "storytelling" within a user's journey.
+                        </Box>
+                      </Box>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title fontFamily="heading" fontSize="lg" fontWeight="semibold">
+                        Diploma in Music Performance (AMusA) - Drums
+                      </Timeline.Title>
+                      <Timeline.Description color="text.secondary" fontSize="sm" mt={1}>
+                        RSL | 2018
+                      </Timeline.Description>
+                      <Text color="text.secondary" lineHeight="moderate" mt={3}>
+                        <Text as="span" fontWeight="semibold">Rhythm & Precision:</Text>
+                        {" "}
+                        My background as a drummer informs my sense of interaction "tempo" and the rhythmic feedback of responsive software.
+                      </Text>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                </Timeline.Root>
               </Box>
             </VStack>
           }
           contentAlign="left"
-          id="experience"
-          title="Professional Experience"
+          id="experience-education"
+          title="Experience & Education"
         />
 
-        {/* 6. Personal & Interests */}
+        {/* 7. Personal & Interests (The Human Touch) */}
         <Section
           bodyContent={
             <Box
@@ -223,102 +329,9 @@ const Home: NextPage = () => {
             </Box>
           }
           contentAlign="left"
-          description="When I'm not &quot;under the hood&quot; of a codebase, you'll find me:"
+          description={"When I'm not \"under the hood\" of a codebase, you'll find me:"}
           id="interests"
-          title="Personal &amp; Interests"
-        />
-
-        {/* 7. Technologies & Tools */}
-        <Section
-          bodyContent={
-            <Table.ScrollArea
-              borderColor="surface.border"
-              borderRadius="md"
-              borderWidth="1px"
-              overflowX="auto"
-            >
-              <Table.Root size="sm" variant="outline">
-                <Table.Header>
-                  <Table.Row>
-                    <Table.ColumnHeader
-                      color="text.primary"
-                      fontWeight="semibold"
-                      pr={4}
-                      py={3}
-                      textAlign="start"
-                    >
-                      Focus Area
-                    </Table.ColumnHeader>
-                    <Table.ColumnHeader
-                      color="text.primary"
-                      fontWeight="semibold"
-                      py={3}
-                      textAlign="start"
-                    >
-                      Technologies &amp; Tools
-                    </Table.ColumnHeader>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                  <Table.Row>
-                    <Table.Cell
-                      color="text.secondary"
-                      fontWeight="medium"
-                      pr={4}
-                      py={3}
-                    >
-                      Front-End
-                    </Table.Cell>
-                    <Table.Cell color="text.secondary" py={3}>
-                      JavaScript (ES6+), TypeScript, React, Next.js, HTML5, CSS3
-                    </Table.Cell>
-                  </Table.Row>
-                  <Table.Row>
-                    <Table.Cell
-                      color="text.secondary"
-                      fontWeight="medium"
-                      pr={4}
-                      py={3}
-                    >
-                      Design
-                    </Table.Cell>
-                    <Table.Cell color="text.secondary" py={3}>
-                      Figma, Photoshop, UI Prototyping, Asset Creation
-                    </Table.Cell>
-                  </Table.Row>
-                  <Table.Row>
-                    <Table.Cell
-                      color="text.secondary"
-                      fontWeight="medium"
-                      pr={4}
-                      py={3}
-                    >
-                      Back-End/Data
-                    </Table.Cell>
-                    <Table.Cell color="text.secondary" py={3}>
-                      Node.js, C#, SQL, Python, RESTful API Integration
-                    </Table.Cell>
-                  </Table.Row>
-                  <Table.Row>
-                    <Table.Cell
-                      color="text.secondary"
-                      fontWeight="medium"
-                      pr={4}
-                      py={3}
-                    >
-                      Methodology
-                    </Table.Cell>
-                    <Table.Cell color="text.secondary" py={3}>
-                      Agile, Waterfall, Jira, Client Discovery
-                    </Table.Cell>
-                  </Table.Row>
-                </Table.Body>
-              </Table.Root>
-            </Table.ScrollArea>
-          }
-          contentAlign="left"
-          id="technologies"
-          title="Technologies &amp; Tools"
+          title="Personal & Interests"
         />
       </Container>
     </Fragment>

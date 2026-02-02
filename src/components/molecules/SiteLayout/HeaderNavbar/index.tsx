@@ -1,39 +1,45 @@
 import { Button, Flex, Grid, HStack, IconButton, StackProps, VisuallyHidden } from "@chakra-ui/react";
+import { usePathname } from "next/navigation";
+import NextLink from "next/link";
 import { FC } from "react";
+import { SITE_HEADER_CTA_ITEMS, SITE_HOME_URL, SITE_NAME } from "@constants";
+import { useIntersectionObserver } from "@utils";
 import { NavLinksGroup } from "./NavLinksGroup";
 import { MobileLinksMenu } from "./MobileLinksMenu";
-import NextLink from "next/link";
-import { SITE_HEADER_CTA_ITEMS, SITE_HOME_URL, SITE_NAME } from "@constants";
 
+export const HEADER_MIN_HEIGHT = 64;
 
 export const HeaderNavbar: FC<StackProps> = (props) => {
+  const pathname = usePathname();
+  const { isVisible: isHeroVisible } = useIntersectionObserver({
+    effectDependencies: [pathname],
+    rootMargin: `-${HEADER_MIN_HEIGHT}px 0px 0px 0px`,
+    targetSelector: "#hero",
+    threshold: 0,
+    triggerOnce: false
+  });
+  const isPastHero = !isHeroVisible;
+
   return (
     <Flex
       align="center"
       as="header"
-      bg="transparent"
+      backdropFilter={isPastHero ? "blur(12px)" : "blur(0px)"}
+      bg={isPastHero ? "surface.canvas/40" : "transparent"}
+      borderBottomWidth={isPastHero ? "1px" : 0}
+      borderColor={isPastHero ? "surface.border" : "transparent"}
       css={{
-        "&::before": {
-          backdropFilter: "blur(12px)",
-          bottom: 0,
-          content: "\"\"",
-          left: 0,
-          maskImage: "linear-gradient(to bottom, black, transparent)",
-          pointerEvents: "none",
-          position: "absolute",
-          right: 0,
-          top: 0,
-          WebkitBackdropFilter: "blur(12px)",
-          WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-          zIndex: -1
-        }
+        WebkitBackdropFilter: isPastHero ? "blur(12px)" : "blur(0px)"
       }}
       justify="center"
+      minH={`${HEADER_MIN_HEIGHT}px`}
       px={{
         base: 4,
         md: 20
       }}
       py={3}
+      transitionDuration="normal"
+      transitionProperty="background-color, border-color, border-bottom-width, backdrop-filter"
       w="100%"
       {...props}
     >
@@ -48,7 +54,6 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
             color: "accent.primary"
           }}
           borderRadius="lg"
-          boxShadow="glow.subtle"
           color="accent.secondary"
           fontFamily="heading"
           fontSize="2xl"
@@ -61,7 +66,7 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
           unstyled
         >
           <NextLink href={SITE_HOME_URL}>
-            {`> ${SITE_NAME}`}
+            {SITE_NAME}
           </NextLink>
         </Button>
 

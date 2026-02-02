@@ -1,43 +1,56 @@
-import { useEffect, useRef, useState } from "react";
+import { type DependencyList, useEffect, useRef, useState } from "react";
 
 interface UseIntersectionObserverOptions {
-  /** 
-   * A number or array of numbers indicating at what percentage of the target's visibility 
-   * the observer's callback should be executed. Defaults to `0.1` (10% visible).
-   * 
-   * @example
-   * ```ts
-   * // Trigger when 25% of element is visible
-   * threshold: 0.25
-   * 
-   * // Trigger at multiple visibility levels
-   * threshold: [0, 0.25, 0.5, 0.75, 1]
-   * ```
+  /**
+   * Optional list of dependencies that trigger the effect to re-run (e.g. pathname for observing
+   * an element that may mount after navigation). Use when observing via `targetSelector`.
    */
-  threshold?: number | number[];
-  
-  /** 
-   * Margin around the root element. Can be used to shrink or grow the root element's 
+  effectDependencies?: DependencyList;
+
+  /**
+   * Margin around the root element. Can be used to shrink or grow the root element's
    * bounding box before computing intersections. Defaults to `"0px"`.
-   * 
+   *
    * @example
    * ```ts
    * // Trigger 50px before element enters viewport
    * rootMargin: "0px 0px -50px 0px"
-   * 
+   *
    * // Trigger 100px before element enters from any direction
    * rootMargin: "100px"
    * ```
    */
   rootMargin?: string;
-  
-  /** 
-   * If `true`, the animation will only trigger once when the element first enters 
-   * the viewport and will remain visible - useful for performance optimisation. 
-   * 
-   * If `false`, the animation will trigger 
+
+  /**
+   * Optional CSS selector for an element to observe (e.g. `"#hero"`). When provided, this
+   * element is observed instead of the one attached to `elementRef`. Use with `effectDependencies`
+   * (e.g. pathname) so the effect re-runs when the target may appear (e.g. after navigation).
+   */
+  targetSelector?: string;
+
+  /**
+   * A number or array of numbers indicating at what percentage of the target's visibility
+   * the observer's callback should be executed. Defaults to `0.1` (10% visible).
+   *
+   * @example
+   * ```ts
+   * // Trigger when 25% of element is visible
+   * threshold: 0.25
+   *
+   * // Trigger at multiple visibility levels
+   * threshold: [0, 0.25, 0.5, 0.75, 1]
+   * ```
+   */
+  threshold?: number | number[];
+
+  /**
+   * If `true`, the animation will only trigger once when the element first enters
+   * the viewport and will remain visible - useful for performance optimisation.
+   *
+   * If `false`, the animation will trigger
    * every time the element enters/exits the viewport - useful for repeated animations.
-   * 
+   *
    * Defaults to `true`.
    */
   triggerOnce?: boolean;
@@ -80,13 +93,21 @@ interface UseIntersectionObserverOptions {
  * ```
  */
 export const useIntersectionObserver = (options: UseIntersectionObserverOptions = {}) => {
-  const { threshold = 0.1, rootMargin = "0px", triggerOnce = true } = options;
+  const {
+    effectDependencies = [],
+    rootMargin = "0px",
+    targetSelector,
+    threshold = 0.1,
+    triggerOnce = true
+  } = options;
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [hasIntersected, setHasIntersected] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const element = elementRef.current;
+    const element = targetSelector ?
+      (document.querySelector(targetSelector) as HTMLElement | null) :
+      elementRef.current;
     if (!element) return;
 
     const observer = new IntersectionObserver(
@@ -94,15 +115,15 @@ export const useIntersectionObserver = (options: UseIntersectionObserverOptions 
         entries.forEach((entry) => {
           const isCurrentlyIntersecting = entry.isIntersecting;
           setIsIntersecting(isCurrentlyIntersecting);
-          
+
           if (isCurrentlyIntersecting && !hasIntersected) {
             setHasIntersected(true);
           }
         });
       },
       {
-        threshold,
-        rootMargin
+        rootMargin,
+        threshold
       }
     );
 
@@ -111,13 +132,13 @@ export const useIntersectionObserver = (options: UseIntersectionObserverOptions 
     return () => {
       observer.unobserve(element);
     };
-  }, [threshold, rootMargin, hasIntersected]);
+  }, [rootMargin, targetSelector, threshold, hasIntersected, effectDependencies]);
 
   // Return the appropriate visibility state based on triggerOnce setting
   const shouldShow = triggerOnce ? hasIntersected : isIntersecting;
 
   return {
     elementRef,
-    isVisible: shouldShow 
+    isVisible: shouldShow
   };
 };

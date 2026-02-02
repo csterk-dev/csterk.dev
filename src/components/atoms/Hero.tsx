@@ -37,6 +37,7 @@ export const Hero: FC<HeroProps> = ({
       alignItems="center"
       as="section"
       display="flex"
+      id="hero"
       justifyContent="center"
       minH={`calc(100dvh - ${HEADER_MIN_HEIGHT * 2}px)`}
       py={8}
@@ -54,11 +55,11 @@ export const Hero: FC<HeroProps> = ({
         {/* 1. Title & role — staggered group */}
         <Box
           animation="fade-in"
-          animationDelay="0s"
+          animationDelay="1s"
+          animationDuration="0.5s"
           animationFillMode="both"
           display="flex"
           flexDirection="column"
-          style={{ animationDuration: "0.5s" }}
         >
           <chakra.h1
             as="h1"
@@ -88,10 +89,10 @@ export const Hero: FC<HeroProps> = ({
         {/* 2. Mission — staggered group */}
         <Box
           animation="fade-in"
-          animationDelay="0.5s"
+          animationDelay="1.5s"
+          animationDuration="0.5s"
           animationFillMode="both"
           my="4dvh"
-          style={{ animationDuration: "0.5s" }}
         >
           <Text
             color="text.secondary"
@@ -144,10 +145,10 @@ export const Hero: FC<HeroProps> = ({
         {/* 3. CTA — staggered group */}
         <Box
           animation="fade-in"
-          animationDelay="1s"
+          animationDelay="2s"
+          animationDuration="0.5s"
           animationFillMode="both"
           mt={10}
-          style={{ animationDuration: "0.5s" }}
         >
           <Button variant={ctaButtonVariant} onClick={scrollToSection}>
             Explore portfolio
