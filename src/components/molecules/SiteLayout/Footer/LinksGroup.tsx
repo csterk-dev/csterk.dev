@@ -20,7 +20,7 @@ export const FooterLinksGroup: FC<FooterLinksGroupProps> = ({ links, children, .
       {links.map(item => (
         <li key={item.label}>
           <Button
-            aria-current={isNavItemActive(router.pathname, item.href) ? "page" : undefined}
+            aria-current={isNavItemActive(router.asPath, item.href) ? "page" : undefined}
             size="lg"
             variant="tertiary"
             asChild

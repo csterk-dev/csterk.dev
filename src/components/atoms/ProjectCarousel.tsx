@@ -1,5 +1,6 @@
-import { AspectRatio, Box, BoxProps, Carousel, IconButton, type IconButtonProps, Text } from "@chakra-ui/react";
+import { AspectRatio, Box, BoxProps, Carousel, IconButton, type IconButtonProps, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
+import NextLink from "next/link";
 import { forwardRef } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 
@@ -8,6 +9,7 @@ export interface ProjectItem {
   client: string;
   tags: string[];
   image: string;
+  href?: string;
 }
 
 export interface ProjectCarouselProps extends BoxProps {
@@ -57,7 +59,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
             >
               {projects.map((project, index) => (
                 <Carousel.Item key={project.name} index={index} width="full">
-                  <Box
+                  <LinkBox
                     _hover={{
                       "& .project-overlay": {
                         opacity: 1
@@ -67,12 +69,25 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                       }
                     }}
                     borderRadius="lg"
+                    cursor={project.href ? "pointer" : undefined}
                     height="100%"
                     overflow="hidden"
                     position="relative"
                     transition="all 0.3s ease-in-out"
                     width="full"
                   >
+                    {project.href ? (
+                      <LinkOverlay asChild>
+                        <NextLink href={project.href}>
+                          <Box
+                            inset={0}
+                            position="absolute"
+                            zIndex={3}
+                            aria-hidden
+                          />
+                        </NextLink>
+                      </LinkOverlay>
+                    ) : null}
                     <Box
                       height="100%"
                       inset={0}
@@ -193,7 +208,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                         ))}
                       </Box>
                     </Box>
-                  </Box>
+                  </LinkBox>
                 </Carousel.Item>
               ))}
             </Carousel.ItemGroup>

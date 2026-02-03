@@ -77,7 +77,7 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
           ml="auto"
           pl={4}
         >
-          <NavLinksGroup hideBelow="md" />
+          <NavLinksGroup hideBelow="md" showHomeLink={false} />
 
           {SITE_HEADER_CTA_ITEMS.map(item => {
             if (typeof item.icon !== "undefined") {

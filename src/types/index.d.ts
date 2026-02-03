@@ -26,4 +26,5 @@ type ProjectItem = {
   client: string;
   tags: string[];
   image: string;
+  href?: string;
 };

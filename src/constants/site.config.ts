@@ -1,4 +1,4 @@
-import { FaFlask, FaGithub, FaHouse, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaHouse, FaLinkedinIn } from "react-icons/fa6";
 
 /*
  * Site Config Constants
@@ -22,7 +22,6 @@ export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csterk.dev"
  * Internal site hrefs: 
  */
 export const SITE_HOME_URL = "/";
-export const SITE_PLAYGROUND_URL = "/playground";
 
 /*
  * External company links: 
@@ -39,12 +38,6 @@ export const SITE_NAV_ITEMS: LinkItem[] = [
     icon: FaHouse,
     label: "Home",
     href: SITE_HOME_URL
-  },
-  {
-    key: "playground",
-    icon: FaFlask,
-    label: "Playground",
-    href: SITE_PLAYGROUND_URL
   }
 ];
 
@@ -258,10 +251,11 @@ export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
     image: "https://images.unsplash.com/photo-1587466412525-87497b34fc88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2673"
   },
   {
-    name: "USE Software Company Rebrand, Website & Marketing",
     client: "USE Software",
-    tags: ["Brand/Marketing", "Web Design", "Rebranding"],
-    image: "https://images.unsplash.com/photo-1629581688635-5d88654e5bdd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2831"
+    href: "/projects/use-software-rebrand",
+    image: "/static/images/projects/use-software-rebrand-hero.jpg",
+    name: "USE Software 2026 Rebrand",
+    tags: ["Design systems & theming", "Research-driven UX", "Accessible, performant UI"]
   }
 ];
 

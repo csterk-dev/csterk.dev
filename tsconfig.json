@@ -22,7 +22,8 @@
       "@templates": ["components/templates"],
       "@theme": ["./theme"],
       "@utils": ["./utils"],
-      "@fonts": ["./fonts"]
+      "@fonts": ["./fonts"],
+      "@contentlayer/generated": ["../.contentlayer/generated"]
     },
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
@@ -39,6 +40,7 @@
   ],
   "include": [
     "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
+    "./.contentlayer/generated"
   ]
 }

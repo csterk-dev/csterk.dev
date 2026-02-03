@@ -55,6 +55,7 @@ export const MobileLinksMenu: FC<MobileLinksMenuProps> = (buttonProps) => {
           <Drawer.Content>
             <Drawer.Body pt="6" spaceY="3">
               <NavLinksGroup
+                displayProjectsAs="list"
                 flexDir="column"
                 gap={2}
                 handleLinkOnClick={menu.onClose}
