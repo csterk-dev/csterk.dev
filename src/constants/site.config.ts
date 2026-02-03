@@ -242,6 +242,30 @@ const createTechStackGroup = (key: string, title: string, description: string, i
 });
 
 /**
+ * Home page featured projects (project carousel).
+ */
+export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
+  {
+    name: "R Jukebox",
+    client: "Personal Project",
+    tags: ["Personal Passion Project", "React", "UI/UX Design"],
+    image: "https://images.unsplash.com/photo-1656433031375-5042f5afe894?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2371"
+  },
+  {
+    name: "Pocket Support",
+    client: "Client Project",
+    tags: ["Complex Logic/UI", "React", "State Management"],
+    image: "https://images.unsplash.com/photo-1587466412525-87497b34fc88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2673"
+  },
+  {
+    name: "USE Software Company Rebrand, Website & Marketing",
+    client: "USE Software",
+    tags: ["Brand/Marketing", "Web Design", "Rebranding"],
+    image: "https://images.unsplash.com/photo-1629581688635-5d88654e5bdd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2831"
+  }
+];
+
+/**
  * Home page "Toolkit" tech stack, grouped to mirror the card headings and body text.
  */
 export const HOME_TOOLKIT_TECH_STACK: TechStackGroup[] = [

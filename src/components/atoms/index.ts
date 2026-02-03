@@ -1,3 +1,4 @@
+export * from "./ChakraTimelineInView";
 export * from "./color-mode";
 export * from "./Container";
 export * from "./CoreCapabilityCard";

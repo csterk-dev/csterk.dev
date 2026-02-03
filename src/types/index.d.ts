@@ -18,4 +18,12 @@ type TechStackGroup = {
   title: string;
   description: string;
   items: TechStackItem[]
-}
+};
+
+/** Featured project entry for the home page project carousel. */
+type ProjectItem = {
+  name: string;
+  client: string;
+  tags: string[];
+  image: string;
+};
