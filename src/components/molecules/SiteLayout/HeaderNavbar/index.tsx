@@ -1,7 +1,7 @@
 import { Button, Flex, Grid, HStack, IconButton, StackProps, VisuallyHidden } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import { SITE_HEADER_CTA_ITEMS, SITE_HOME_URL, SITE_NAME } from "@constants";
 import { useIntersectionObserver } from "@utils";
 import { NavLinksGroup } from "./NavLinksGroup";
@@ -11,6 +11,7 @@ export const HEADER_MIN_HEIGHT = 64;
 
 export const HeaderNavbar: FC<StackProps> = (props) => {
   const pathname = usePathname();
+  const heroHasBeenVisibleRef = useRef(false);
   const { isVisible: isHeroVisible } = useIntersectionObserver({
     effectDependencies: [pathname],
     rootMargin: `-${HEADER_MIN_HEIGHT}px 0px 0px 0px`,
@@ -18,7 +19,11 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
     threshold: 0,
     triggerOnce: false
   });
-  const isPastHero = !isHeroVisible;
+  useEffect(() => {
+    heroHasBeenVisibleRef.current = false;
+  }, [pathname]);
+  if (isHeroVisible) heroHasBeenVisibleRef.current = true;
+  const isPastHero = heroHasBeenVisibleRef.current && !isHeroVisible;
 
   return (
     <Flex
@@ -26,7 +31,7 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
       as="header"
       backdropFilter={isPastHero ? "blur(12px)" : "blur(0px)"}
       bg={isPastHero ? "surface.canvas/40" : "transparent"}
-      borderBottomWidth={isPastHero ? "1px" : 0}
+      borderBottomWidth="1px"
       borderColor={isPastHero ? "surface.border" : "transparent"}
       css={{
         WebkitBackdropFilter: isPastHero ? "blur(12px)" : "blur(0px)"
@@ -38,8 +43,9 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
         md: 20
       }}
       py={3}
-      transitionDuration="normal"
-      transitionProperty="background-color, border-color, border-bottom-width, backdrop-filter"
+      transitionDuration="fast"
+      transitionProperty="background-color, border-color, backdrop-filter"
+      transitionTimingFunction="ease"
       w="100%"
       {...props}
     >
