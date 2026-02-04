@@ -51,18 +51,17 @@ export const EDUCATION_ITEMS: ChakraTimelineInViewItem[] = [
       >
         <Box as="li" mb={2}>
           <Text as="span" fontWeight="semibold">Academic Excellence:</Text>
-          {" "}
-          Recognised on the QUT Academic Dean's List from 2019 to 2022.
+
+          <Text>Recognised on the QUT Academic Dean's List from 2019 to 2022.</Text>
         </Box>
         <Box as="li" mb={2}>
           <Text as="span" fontWeight="semibold">The Intersection:</Text>
-          {" "}
-          This double degree allowed me to master rigorous software engineering principles while honing my creative instincts in sound design and performance.
+
+          <Text>This double degree allowed me to master rigorous software engineering principles while honing my creative instincts in sound design and performance.</Text>
         </Box>
         <Box as="li">
           <Text as="span" fontWeight="semibold">Relevance:</Text>
-          {" "}
-          I use this unique combination to bridge the gap between complex codebases and intuitive, sensory-rich user interfaces.
+          <Text>I use this unique combination to bridge the gap between complex codebases and intuitive, sensory-rich user interfaces.</Text>
         </Box>
       </Box>
     )
@@ -79,18 +78,15 @@ export const EDUCATION_ITEMS: ChakraTimelineInViewItem[] = [
       >
         <Box as="li" mb={2}>
           <Text as="span" fontWeight="semibold">Visual Storytelling:</Text>
-          {" "}
-          Developed a foundational understanding of composition, lighting, and pacing through film and multimedia production.
+          <Text>Developed a foundational understanding of composition, lighting, and pacing through film and multimedia production.</Text>
         </Box>
         <Box as="li" mb={2}>
           <Text as="span" fontWeight="semibold">Industry Application:</Text>
-          {" "}
-          Served as a Camera Assistant for Titans TV, assisting in live recordings for Gold Coast Titans pre-show performances.
+          <Text>Served as a Camera Assistant for Titans TV, assisting in live recordings for Gold Coast Titans pre-show performances.</Text>
         </Box>
         <Box as="li">
           <Text as="span" fontWeight="semibold">Impact on UX:</Text>
-          {" "}
-          My roots in media allow me to view digital interfaces through a cinematic lens—prioritising visual flow and "storytelling" within a user's journey.
+          <Text>My roots in media allow me to view digital interfaces through a cinematic lens—prioritising visual flow and "storytelling" within a user's journey.</Text>
         </Box>
       </Box>
     )
@@ -99,11 +95,19 @@ export const EDUCATION_ITEMS: ChakraTimelineInViewItem[] = [
     title: "Diploma in Music Performance (AMusA) - Drums",
     description: "RSL | 2018",
     children: (
-      <Text color="text.secondary" lineHeight="moderate">
-        <Text as="span" fontWeight="semibold">Rhythm & Precision:</Text>
-        {" "}
-        My background as a drummer informs my sense of interaction "tempo" and the rhythmic feedback of responsive software.
-      </Text>
+      <Box
+        as="ul"
+        color="text.secondary"
+        lineHeight="moderate"
+        pl={5}
+      >
+        <Box as="li" mb={2}>
+          <Text as="span" fontWeight="semibold" mb={2}>Rhythm & Precision:</Text>
+          <Text mb={2}>My background as a drummer shapes how I think about interaction "tempo" and the rhythmic feedback of responsive software, which feeds straight into the products I build.</Text>
+          <Text mb={2}>In performance, the goal is the right amount of energy and spice: something impressive and entertaining that lifts the piece without overplaying and pulling focus from the whole.</Text>
+          <Text>I bring that same balance to digital products: memorable, distinctive moments that leave a lasting impression without overwhelming the experience.</Text>
+        </Box>
+      </Box>
     )
   }
 ];

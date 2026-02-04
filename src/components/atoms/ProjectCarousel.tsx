@@ -73,7 +73,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                     height="100%"
                     overflow="hidden"
                     position="relative"
-                    transition="all 0.3s ease-in-out"
+                    transition="all 0.15s ease-out"
                     width="full"
                   >
                     {project.href ? (
