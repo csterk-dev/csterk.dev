@@ -53,9 +53,9 @@ export const TraceBorderCardWrapper: FC<TraceBorderCardWrapperProps> = ({
           y1="0%"
           y2="100%"
         >
-          <stop offset="0%" stopColor="#4EECC2" stopOpacity="0.5" />
-          <stop offset="50%" stopColor="#1ED9AA" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#0FC3A0" stopOpacity="0.5" />
+          <stop offset="0%" stopColor="var(--gradient-trace-stop-1)" stopOpacity="0.5" />
+          <stop offset="50%" stopColor="var(--gradient-trace-stop-2)" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="var(--gradient-trace-stop-3)" stopOpacity="0.5" />
         </linearGradient>
       </defs>
       <chakra.rect

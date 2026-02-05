@@ -108,5 +108,85 @@ export const keyframes = defineKeyframes({
     "100%": { 
       strokeDashoffset: "175"
     }
+  },
+  "trace-line-0": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-1": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-2": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-3": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-4": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-5": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-6": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-7": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-8": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-9": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
   }
 });

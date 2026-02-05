@@ -80,12 +80,12 @@ export const Footer: FC<StackProps> = (props) => {
         <Text
           color="text.secondary"
           fontFamily="heading"
-          fontSize="lg"
+          fontSize="xl"
           textAlign="center"
         >
           Let's build something that delights.
         </Text>
-        <HStack color="text.muted">
+        <HStack color="text.muted" fontSize="sm">
           © 2026 Chris Sterkenburg. All Rights Reserved
         </HStack>
       </VStack>

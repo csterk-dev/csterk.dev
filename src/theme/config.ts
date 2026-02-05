@@ -41,7 +41,12 @@ const system = createSystem(defaultConfig, {
       /* Glow primitives */
       "--glow-subtle": "shadows.glow.subtle",
       "--glow-interactive": "shadows.glow.interactive",
-      "--glow-strong": "shadows.glow.strong"
+      "--glow-strong": "shadows.glow.strong",
+
+      /* Shared trace-border gradient stop colors */
+      "--gradient-trace-stop-1": "#8BF7EF",
+      "--gradient-trace-stop-2": "#5AE0DB",
+      "--gradient-trace-stop-3": "#2BA89D"
     },
     "*::selection": {
       bg: "accent.secondary/100",

@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         {/* 1. Hero */}
         <Hero ctaScrollToId="about" />
 
-        {/* 2. About Me: The "Under the Hood" Story */}
+        {/* 2. About Me */}
         <Section
           bodyContent={
             <VStack align="stretch" gap={4} textAlign="start">
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
           title="Experience & Education"
         />
 
-        {/* 7. Personal & Interests (The Human Touch) */}
+        {/* 7. Personal & Interests */}
         <Section
           bodyContent={
             <VStack gap={3} w="100%">
