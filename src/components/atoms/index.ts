@@ -4,6 +4,7 @@ export * from "./Container";
 export * from "./CoreCapabilityCard";
 export * from "./Divider";
 export * from "./Hero";
+export * from "./InterestCard";
 export * from "./MDXComponents";
 export * from "./ProfilePictureOutlineCard";
 export * from "./ProjectCarousel";
