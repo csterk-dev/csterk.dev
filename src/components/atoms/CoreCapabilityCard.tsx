@@ -15,7 +15,7 @@ type CoreCapabilityCardProps = {
 export const CoreCapabilityCard: FC<CoreCapabilityCardProps> = ({ icon, title, description }) => (
   <Card.Body>
     <VStack align="center" gap={4} mb={4}>
-      <Icon color="brand.400" fontSize="4xl">
+      <Icon color="accent.primary" fontSize="4xl">
         {icon}
       </Icon>
     </VStack>

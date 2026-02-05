@@ -107,7 +107,7 @@ export const NavLinksGroup: FC<LinksGroupProps> = ({
           <>
             <chakra.li w="100%">
               <Text
-                color="fg.muted"
+                color="text.secondary"
                 fontSize="sm"
                 fontWeight="semibold"
                 my={2}

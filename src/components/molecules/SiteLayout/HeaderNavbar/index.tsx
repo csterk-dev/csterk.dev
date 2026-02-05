@@ -56,20 +56,11 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
         maxW="8xl"
       >
         <Button
-          _hover={{
-            color: "accent.primary"
-          }}
-          borderRadius="lg"
-          color="accent.secondary"
           fontFamily="heading"
           fontSize="2xl"
           mr="auto"
-          px={4}
-          transitionDuration="fast"
-          transitionProperty="box-shadow, background, color"
-          w="auto"
+          variant="tertiary"
           asChild
-          unstyled
         >
           <NextLink href={SITE_HOME_URL}>
             {SITE_NAME}

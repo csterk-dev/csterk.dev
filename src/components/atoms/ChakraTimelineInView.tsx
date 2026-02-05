@@ -89,7 +89,7 @@ const ChakraTimelineInViewInner: FC<ChakraTimelineInViewProps> = ({
       {lineStyle !== null ? (
         <>
           <Box
-            bg="neutral.600"
+            bg="surface.border"
             height={`${lineStyle.height}px`}
             left="calc(var(--timeline-indicator-size) / 2 - 1px)"
             position="absolute"
@@ -99,7 +99,7 @@ const ChakraTimelineInViewInner: FC<ChakraTimelineInViewProps> = ({
           />
           {/* Fill: animates from 0 to full line height; duration = 4000ms per segment */}
           <Box
-            bg="brand.500"
+            bg="accent.primary"
             height={inView ? `${lineStyle.height}px` : "0px"}
             left="calc(var(--timeline-indicator-size) / 2 - 1px)"
             position="absolute"
@@ -146,7 +146,7 @@ const ChakraTimelineInViewInner: FC<ChakraTimelineInViewProps> = ({
                   {item.description}
                 </Timeline.Description>
                 <Box
-                  color="fg.muted"
+                  color="text.secondary"
                   fontSize="md"
                   lineHeight="moderate"
                   mt={4}

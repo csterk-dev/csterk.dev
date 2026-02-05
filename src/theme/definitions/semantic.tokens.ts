@@ -56,17 +56,16 @@ const textColors = defineSemanticTokens.colors({
  * Semantic accent colors
  */
 const accentColors = defineSemanticTokens.colors({
-  primary: { value: "{colors.brand.500}" },
+  primary: { value: "{colors.brand.400}" },
   secondary: { value: "{colors.brand.100}" },
   subtle: { value: "{colors.brand.700}" },
-  muted: { value: "{colors.brand.800}" }
+  muted: { value: "{colors.neutral.400}" }
 });
 
 /**
  * Interactive state colors
  */
 const interactiveColors = defineSemanticTokens.colors({
-  idle: { value: "{colors.brand.500}" },
   hover: { value: "{colors.brand.200}" },
   active: { value: "{colors.brand.300}" },
   focus: { value: "{colors.brand.400}" }

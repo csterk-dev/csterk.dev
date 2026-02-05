@@ -152,7 +152,7 @@ export const MDXComponents: Record<string, FC<any>> = {
   blockquote(props) {
     return (
       <chakra.blockquote
-        bg="neutral.800"
+        bg="surface.raised"
         color="white"
         marginX="-6"
         my={4}
@@ -220,37 +220,6 @@ export const MDXComponents: Record<string, FC<any>> = {
       return <Box as="code" color="text.primary" rounded="lg">{`\`${props.children}\``}</Box>;
     }
     return <code {...props} />;
-  },
-  table(props) {
-    return (
-      <chakra.table
-        my={4}
-        sx={{
-          borderCollapse: "collapse",
-          thead: {
-            borderBottomWidth: "1px",
-            borderBottomColor: "neutral.700",
-            th: {
-              textAlign: "start",
-              padding: "2",
-              verticalAlign: "bottom",
-              color: "neutral.200"
-            }
-          },
-          tbody: {
-            tr: {
-              borderBottomWidth: "1px",
-              borderBottomColor: "neutral.800"
-            },
-            td: {
-              padding: "2"
-            }
-          }
-        }}
-        width="full"
-        {...props}
-      />
-    );
   }
   // LinkCover(props) {
   //   const { href, title, ...rest } = props;

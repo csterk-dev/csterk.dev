@@ -74,7 +74,7 @@ export const Hero: FC<HeroProps> = ({
             Chris Sterkenburg
           </chakra.h1>
           <Text
-            color="fg.muted"
+            color="text.secondary"
             fontSize={{
               base: "lg",
               lg: "xl"
@@ -126,7 +126,7 @@ export const Hero: FC<HeroProps> = ({
                     alignItems="center"
                     as="span"
                     borderRadius="sm"
-                    color="accent.secondary"
+                    color="accent.primary"
                     display="flex"
                     h="1.4em"
                     justifyContent="start"

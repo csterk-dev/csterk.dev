@@ -41,18 +41,7 @@ const system = createSystem(defaultConfig, {
       /* Glow primitives */
       "--glow-subtle": "shadows.glow.subtle",
       "--glow-interactive": "shadows.glow.interactive",
-      "--glow-strong": "shadows.glow.strong",
-  
-      /* Media controls */
-      "--media-primary-color": "colors.text.inverse",
-      "--media-secondary-color": "rgba(165, 175, 189, 0.9)",
-      "--media-control-hover-background": "colors.surface.raised",
-  
-      /* Motion */
-      "--motion-fast": "150ms",
-      "--motion-medium": "250ms",
-      "--motion-slow": "400ms"
-
+      "--glow-strong": "shadows.glow.strong"
     },
     "*::selection": {
       bg: "accent.secondary/100",
