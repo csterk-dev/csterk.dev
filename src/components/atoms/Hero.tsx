@@ -14,7 +14,7 @@ interface HeroProps {
 const HERO_CYCLE_WORDS = ["delights", "shines", "amazes", "wows", "impresses"];
 const HERO_CYCLE_INTERVAL_MS = 5000;
 
-const HERO_LINES_MEDIA_QUERY = "(max-width: 480px)";
+const HERO_LINES_MEDIA_QUERY = "(max-width: 1024px)";
 
 export const Hero: FC<HeroProps> = ({
   ctaButtonVariant = "secondary",
@@ -238,7 +238,10 @@ export const Hero: FC<HeroProps> = ({
       </chakra.svg>
 
       <Flex
-        alignItems="center"
+        alignItems={{
+          base: "flex-start",
+          md: "center" 
+        }}
         flexDirection="column"
         gap={0}
         mx="auto"
@@ -266,6 +269,10 @@ export const Hero: FC<HeroProps> = ({
             }}
             letterSpacing="tight"
             lineHeight="1.1"
+            textAlign={{
+              base: "left",
+              md: "center"
+            }}
           >
             Chris Sterkenburg
           </chakra.h1>
@@ -276,7 +283,10 @@ export const Hero: FC<HeroProps> = ({
               lg: "xl"
             }}
             mt={2}
-            textAlign="center"
+            textAlign={{
+              base: "left",
+              md: "center"
+            }}
           >
             Creative Front-End Wizard & UI/UX Designer
           </Text>
@@ -297,7 +307,10 @@ export const Hero: FC<HeroProps> = ({
               lg: "3xl"
             }}
             lineHeight="1.4"
-            textAlign="center"
+            textAlign={{
+              base: "left",
+              md: "center"
+            }}
           >
             Designing software that doesn't just work, it
             {" "}

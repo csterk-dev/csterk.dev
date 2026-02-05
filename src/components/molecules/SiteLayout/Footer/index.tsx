@@ -80,7 +80,10 @@ export const Footer: FC<StackProps> = (props) => {
         <Text
           color="text.secondary"
           fontFamily="heading"
-          fontSize="xl"
+          fontSize={{
+            base: "lg",
+            md: "xl"
+          }}
           textAlign="center"
         >
           Let's build something that delights.
