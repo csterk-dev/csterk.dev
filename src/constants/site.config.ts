@@ -13,8 +13,7 @@ import { FaGithub, FaHouse, FaLinkedinIn } from "react-icons/fa6";
  */
 export const SITE_NAME = "csterk.dev";
 export const SITE_NAME_TEMPLATE = `%s | ${SITE_NAME}`;
-export const SITE_OWNER = "Chris Sterk";
-export const SITE_CREATOR = "Chris Sterk";
+export const SITE_OWNER = "Chris Sterkenburg";
 
 export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csterk.dev";
 

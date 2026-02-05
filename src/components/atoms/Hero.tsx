@@ -92,7 +92,7 @@ export const Hero: FC<HeroProps> = ({
           animationDelay="1.5s"
           animationDuration="0.5s"
           animationFillMode="both"
-          my="4dvh"
+          my="4vh"
         >
           <Text
             color="text.secondary"
