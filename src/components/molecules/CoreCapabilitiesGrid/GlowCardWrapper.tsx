@@ -12,18 +12,24 @@ type GlowCardWrapperProps = {
 
 export const GlowCardWrapper: FC<GlowCardWrapperProps> = ({ children, isActive = false }) => (
   <Box
-    _before={{
-      background: `radial-gradient(${GLOW_RADIUS} circle at var(--glow-x, 50%) var(--glow-y, 50%), ${GLOW_COLOR} 0%, transparent ${GLOW_FADE_END})`,
-      borderRadius: "inherit",
-      content: "\"\"",
-      inset: "-2px",
-      opacity: isActive ? 0.9 : 0.35,
-      pointerEvents: "none",
-      position: "absolute",
-      transition: "opacity 1s ease-out, background 0.25s ease-out",
-      zIndex: 0
-    }}
     borderRadius="l3"
+    css={{
+      "&::before": {
+        background: `radial-gradient(${GLOW_RADIUS} circle at var(--glow-x, 50%) var(--glow-y, 50%), ${GLOW_COLOR} 0%, transparent ${GLOW_FADE_END})`,
+        borderRadius: "inherit",
+        content: "\"\"",
+        inset: "-2px",
+        opacity: 0.35,
+        pointerEvents: "none",
+        position: "absolute",
+        transition: "opacity 1s ease-out, background 0.25s ease-out",
+        zIndex: 0
+      },
+      "&[data-active]::before": {
+        opacity: 0.9
+      }
+    }}
+    data-active={isActive || undefined}
     overflow="visible"
     position="relative"
     style={{

@@ -139,10 +139,10 @@ const ChakraTimelineInViewInner: FC<ChakraTimelineInViewProps> = ({
                 />
               </Timeline.Connector>
               <Timeline.Content maxW="6xl">
-                <Timeline.Title fontFamily="heading" textStyle="sm">
+                <Timeline.Title fontFamily="heading" textStyle="md">
                   {item.title}
                 </Timeline.Title>
-                <Timeline.Description>
+                <Timeline.Description textStyle="sm">
                   {item.description}
                 </Timeline.Description>
                 <Box

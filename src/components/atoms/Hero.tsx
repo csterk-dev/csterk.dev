@@ -67,14 +67,21 @@ export const Hero: FC<HeroProps> = ({
       {/* Background gradient tracing lines (hidden on viewports ≤480px) */}
       <chakra.svg
         as="svg"
+        css={{
+          opacity: 0.6,
+          visibility: "visible",
+          "&[data-hidden='true']": {
+            opacity: 0,
+            visibility: "hidden"
+          }
+        }}
+        data-hidden={hideLines ? "true" : undefined}
         height="100%"
         left={0}
-        opacity={hideLines ? 0 : 0.6}
         pointerEvents="none"
         position="absolute"
         top={0}
         viewBox="0 0 1920 1080"
-        visibility={hideLines ? "hidden" : "visible"}
         width="100%"
         zIndex={0}
       >
@@ -279,7 +286,7 @@ export const Hero: FC<HeroProps> = ({
           <Text
             color="text.secondary"
             fontSize={{
-              base: "lg",
+              base: "sm",
               lg: "xl"
             }}
             mt={2}
@@ -303,7 +310,7 @@ export const Hero: FC<HeroProps> = ({
           <Text
             color="text.secondary"
             fontSize={{
-              base: "2xl",
+              base: "xl",
               lg: "3xl"
             }}
             lineHeight="1.4"
@@ -324,10 +331,15 @@ export const Hero: FC<HeroProps> = ({
             >
               <Box
                 as="span"
+                css={{
+                  transform: "translateY(var(--hero-word-offset))",
+                  transition: "transform 0.5s ease-out"
+                }}
                 display="flex"
                 flexDirection="column"
-                style={{ transform: `translateY(-${heroWordIndex * 1.4}em)` }}
-                transition="transform 0.5s ease-out"
+                style={{
+                  "--hero-word-offset": `-${heroWordIndex * 1.4}em`
+                } as React.CSSProperties}
               >
                 {HERO_CYCLE_WORDS.map(word => (
                   <Box
@@ -358,6 +370,7 @@ export const Hero: FC<HeroProps> = ({
           animationDuration="0.5s"
           animationFillMode="both"
           mt={10}
+          mx="auto"
         >
           <Button variant={ctaButtonVariant} onClick={scrollToSection}>
             Explore portfolio

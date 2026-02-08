@@ -29,13 +29,20 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
     <Flex
       align="center"
       as="header"
-      backdropFilter={isPastHero ? "blur(12px)" : "blur(0px)"}
-      bg={isPastHero ? "surface.canvas/40" : "transparent"}
       borderBottomWidth="1px"
-      borderColor={isPastHero ? "surface.border" : "transparent"}
       css={{
-        WebkitBackdropFilter: isPastHero ? "blur(12px)" : "blur(0px)"
+        backdropFilter: "blur(0px)",
+        WebkitBackdropFilter: "blur(0px)",
+        bg: "transparent",
+        borderColor: "transparent",
+        "&[data-past-hero]": {
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          bg: "surface.canvas/40",
+          borderColor: "surface.border"
+        }
       }}
+      data-past-hero={isPastHero || undefined}
       justify="center"
       minH={`${HEADER_MIN_HEIGHT}px`}
       px={{
