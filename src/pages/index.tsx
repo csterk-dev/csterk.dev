@@ -39,8 +39,7 @@ const Home: NextPage = () => {
                   Computer Science and Creative Industries (Music & Sound)
                 </Text>
                 , I bridge the gap between technical engineering and creative design. Whether I'm drumming
-                in a band, editing film, or building a React app, my goal remains the same: to remove clunky
-                "pain points" and replace them with experiences that delight.
+                in a band, editing film, or building a React app, my goal remains the same: to create seamless experiences that delight!
               </Text>
             </VStack>
           }
