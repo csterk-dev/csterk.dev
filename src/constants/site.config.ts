@@ -54,7 +54,7 @@ export const SITE_SOCIAL_ITEMS: LinkItem[] = [
   {
     key: "github",
     label: "GitHub",
-    href: SOCIALS_LINKEDIN_URL,
+    href: SOCIALS_GITHUB_URL,
     icon: FaGithub
   }
 ];
