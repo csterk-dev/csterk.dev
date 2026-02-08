@@ -28,4 +28,5 @@ type ProjectItem = {
   image: string;
   href?: string;
   comingSoon?: boolean;
+  useGradientBg?: boolean;
 };

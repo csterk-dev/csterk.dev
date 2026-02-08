@@ -4,6 +4,8 @@ import NextLink from "next/link";
 import { forwardRef } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 
+const HERO_GRADIENT = "radial-gradient(ellipse 120% 100% at 85% 15%, rgba(15, 163, 160, 0.14) 0%, transparent 50%), radial-gradient(ellipse 90% 80% at 15% 85%, rgba(8, 94, 93, 0.1) 0%, transparent 45%), radial-gradient(ellipse 100% 60% at 50% 50%, rgba(46, 211, 196, 0.06) 0%, transparent 55%), radial-gradient(ellipse 80% 50% at 70% 60%, rgba(11, 126, 125, 0.08) 0%, transparent 40%), radial-gradient(ellipse 150% 120% at 50% 50%, rgba(30, 34, 40, 0.6) 0%, transparent 70%), #1E2228";
+
 export interface ProjectItem {
   name: string;
   client: string;
@@ -11,6 +13,7 @@ export interface ProjectItem {
   image: string;
   href?: string;
   comingSoon?: boolean;
+  useGradientBg?: boolean;
 }
 
 export interface ProjectCarouselProps extends BoxProps {
@@ -90,25 +93,28 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                       </LinkOverlay>
                     ) : null}
                     <Box
+                      background={project.useGradientBg ? HERO_GRADIENT : undefined}
                       height="100%"
                       inset={0}
                       position="absolute"
                       width="100%"
                       zIndex={0}
                     >
-                      <NextImage
-                        alt=""
-                        quality={50}
-                        sizes="100vw"
-                        src={project.image}
-                        style={{
-                          filter: "blur(24px)",
-                          objectFit: "cover",
-                          transform: "scale(1.1)"
-                        }}
-                        aria-hidden
-                        fill
-                      />
+                      {!project.useGradientBg && (
+                        <NextImage
+                          alt=""
+                          quality={50}
+                          sizes="100vw"
+                          src={project.image}
+                          style={{
+                            filter: "blur(24px)",
+                            objectFit: "cover",
+                            transform: "scale(1.1)"
+                          }}
+                          aria-hidden
+                          fill
+                        />
+                      )}
                     </Box>
                     <Box
                       alignItems="center"
