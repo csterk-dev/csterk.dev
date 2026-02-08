@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { Provider, Toaster } from "@atoms";
 import { Anta, OpenSans } from "@fonts";
 import { DefaultSeo } from "next-seo";
-import { BASE_URL, SITE_NAME, SITE_NAME_TEMPLATE, SITE_OWNER } from "@constants";
+import { DEFAULT_SEO_CONFIG, SITE_NAME, SITE_NAME_TEMPLATE, SITE_OWNER } from "@constants";
 import { colors } from "@theme";
 import { SiteLayout } from "@molecules";
 
@@ -49,8 +49,25 @@ const App = ({ Component, pageProps }: AppProps) => {
             content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           }
         ]}
-        canonical={BASE_URL}
+        canonical={DEFAULT_SEO_CONFIG.canonical}
         defaultTitle={SITE_NAME}
+        description={DEFAULT_SEO_CONFIG.description}
+        openGraph={{
+          type: "website",
+          locale: "en_AU",
+          url: DEFAULT_SEO_CONFIG.canonical,
+          siteName: SITE_NAME,
+          title: DEFAULT_SEO_CONFIG.title,
+          description: DEFAULT_SEO_CONFIG.description,
+          images: [
+            {
+              url: DEFAULT_SEO_CONFIG.ogImage.url,
+              width: DEFAULT_SEO_CONFIG.ogImage.width,
+              height: DEFAULT_SEO_CONFIG.ogImage.height,
+              alt: DEFAULT_SEO_CONFIG.title
+            }
+          ]
+        }}
         themeColor={colors.brand[900].value}
         titleTemplate={SITE_NAME_TEMPLATE}
       />

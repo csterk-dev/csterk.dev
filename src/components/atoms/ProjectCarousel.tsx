@@ -10,6 +10,7 @@ export interface ProjectItem {
   tags: string[];
   image: string;
   href?: string;
+  comingSoon?: boolean;
 }
 
 export interface ProjectCarouselProps extends BoxProps {
@@ -69,14 +70,14 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                       }
                     }}
                     borderRadius="lg"
-                    cursor={project.href ? "pointer" : undefined}
+                    cursor={project.href && !project.comingSoon ? "pointer" : "default"}
                     height="100%"
                     overflow="hidden"
                     position="relative"
                     transition="all 0.15s ease-out"
                     width="full"
                   >
-                    {project.href ? (
+                    {project.href && !project.comingSoon ? (
                       <LinkOverlay asChild>
                         <NextLink href={project.href}>
                           <Box
@@ -168,6 +169,28 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                       transition="opacity 0.3s ease-in-out"
                       zIndex={2}
                     >
+                      {project.comingSoon ? (
+                        <Box
+                          backdropFilter="blur(10px)"
+                          bg="brand.subtle/30"
+                          border="1px solid"
+                          borderColor="brand.emphasized/50"
+                          borderRadius="full"
+                          mb={2}
+                          px={4}
+                          py={2}
+                        >
+                          <Text
+                            color="brand.contrast"
+                            fontSize="sm"
+                            fontWeight="semibold"
+                            textAlign="center"
+                            textTransform="uppercase"
+                          >
+                            Coming Soon
+                          </Text>
+                        </Box>
+                      ) : null}
                       <Text
                         color="white"
                         fontSize="2xl"

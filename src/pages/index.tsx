@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import { Container, Hero, InterestCard, ProfilePictureOutlineCard, ProjectCarousel, Section, SEOConfig } from "@atoms";
+import { Container, Hero, InterestCard, ProfilePictureOutlineCard, ProjectCarousel, Section, SEOConfig, StructuredData } from "@atoms";
 import { CoreCapabilitiesGrid, ExperienceEducationTimelines } from "@molecules";
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import { HOME_FEATURED_PROJECTS, HOME_TOOLKIT_TECH_STACK } from "@constants";
+import { HOME_FEATURED_PROJECTS, HOME_TOOLKIT_TECH_STACK, PERSON_STRUCTURED_DATA, WEBSITE_STRUCTURED_DATA } from "@constants";
 import { ToolkitTechGrid } from "@organisms";
 import { NextPage } from "next";
 import NextImage from "next/image";
@@ -17,6 +17,8 @@ const Home: NextPage = () => {
   return (
     <Fragment>
       <SEOConfig title="Home" />
+      <StructuredData data={WEBSITE_STRUCTURED_DATA} />
+      <StructuredData data={PERSON_STRUCTURED_DATA} />
       <Container>
         {/* 1. Hero */}
         <Hero ctaScrollToId="about" />

@@ -27,4 +27,5 @@ type ProjectItem = {
   tags: string[];
   image: string;
   href?: string;
+  comingSoon?: boolean;
 };
