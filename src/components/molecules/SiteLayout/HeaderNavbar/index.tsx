@@ -1,17 +1,21 @@
 import { Button, Flex, Grid, HStack, IconButton, StackProps, VisuallyHidden } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { SITE_HEADER_CTA_ITEMS, SITE_HOME_URL, SITE_NAME } from "@constants";
 import { useIntersectionObserver } from "@utils";
 import { NavLinksGroup } from "./NavLinksGroup";
 import { MobileLinksMenu } from "./MobileLinksMenu";
 
 export const HEADER_MIN_HEIGHT = 64;
+const SCROLL_THRESHOLD = 100;
 
 export const HeaderNavbar: FC<StackProps> = (props) => {
   const pathname = usePathname();
   const heroHasBeenVisibleRef = useRef(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [hasHeroElement, setHasHeroElement] = useState(false);
+
   const { isVisible: isHeroVisible } = useIntersectionObserver({
     effectDependencies: [pathname],
     rootMargin: `-${HEADER_MIN_HEIGHT}px 0px 0px 0px`,
@@ -19,11 +23,34 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
     threshold: 0,
     triggerOnce: false
   });
+
   useEffect(() => {
     heroHasBeenVisibleRef.current = false;
+    const heroElement = document.querySelector("#hero");
+    setHasHeroElement(!!heroElement);
   }, [pathname]);
-  if (isHeroVisible) heroHasBeenVisibleRef.current = true;
-  const isPastHero = heroHasBeenVisibleRef.current && !isHeroVisible;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isHeroVisible) {
+      heroHasBeenVisibleRef.current = true;
+    }
+  }, [isHeroVisible]);
+
+  const isPastHero = useMemo(() => heroHasBeenVisibleRef.current && !isHeroVisible, [isHeroVisible])
+  const shouldBlur = useMemo(() => hasHeroElement ? isPastHero : scrollY > SCROLL_THRESHOLD, [hasHeroElement, isPastHero, scrollY])
 
   return (
     <Flex
@@ -42,7 +69,7 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
           borderColor: "surface.border"
         }
       }}
-      data-past-hero={isPastHero || undefined}
+      data-past-hero={shouldBlur || undefined}
       justify="center"
       minH={`${HEADER_MIN_HEIGHT}px`}
       px={{
@@ -75,7 +102,6 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
         </Button>
 
         <HStack
-          // bg="surface.canvas"
           borderRadius="lg"
           justify="end"
           ml="auto"
