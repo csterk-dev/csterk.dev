@@ -238,23 +238,28 @@ const createTechStackGroup = (key: string, title: string, description: string, i
  */
 export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
   {
+    client: "USE Software",
+    href: "/projects/use-software-rebrand",
+    image: "/static/images/projects/use-software-rebrand-frame.png",
+    name: "USE Software 2026 Rebrand",
+    tags: ["Design systems & theming", "Research-driven UX", "Accessible, performant UI"],
+    useGradientBg: true
+  },
+  {
     name: "R Jukebox",
     client: "Personal Project",
     tags: ["Personal Passion Project", "React", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1656433031375-5042f5afe894?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2371"
+    image: "/static/images/projects/jukebox-frame.png",
+    comingSoon: true,
+    useGradientBg: true
   },
   {
     name: "Pocket Support",
     client: "Client Project",
     tags: ["Complex Logic/UI", "React", "State Management"],
-    image: "https://images.unsplash.com/photo-1587466412525-87497b34fc88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2673"
-  },
-  {
-    client: "USE Software",
-    href: "/projects/use-software-rebrand",
-    image: "/static/images/projects/use-software-rebrand-hero.jpg",
-    name: "USE Software 2026 Rebrand",
-    tags: ["Design systems & theming", "Research-driven UX", "Accessible, performant UI"]
+    image: "/static/images/projects/pocket-support-frame.png",
+    comingSoon: true,
+    useGradientBg: true
   }
 ];
 
@@ -318,3 +323,63 @@ export const HOME_TOOLKIT_TECH_STACK: TechStackGroup[] = [
     ]
   )
 ];
+
+
+export const DEFAULT_SEO_CONFIG = {
+  canonical: BASE_URL,
+  description: "Front-End Developer and UI/UX Designer specialising in React, TypeScript, and modern web technologies. Creating delightful user experiences that bridge technical engineering and creative design.",
+  title: "Chris Sterkenburg - Front-End Developer & UI/UX Designer",
+  ogImage: {
+    url: `${BASE_URL}/static/images/og-image.png`,
+    width: 1200,
+    height: 630
+  }
+};
+
+
+/** Structured data for the website (WebSite schema). */
+export const WEBSITE_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: BASE_URL,
+  description: DEFAULT_SEO_CONFIG.description,
+  author: {
+    "@type": "Person",
+    name: SITE_OWNER
+  }
+};
+
+
+/** Structured data for Chris Sterkenburg (Person schema). */
+export const PERSON_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_OWNER,
+  url: BASE_URL,
+  image: `${BASE_URL}/static/images/chris.png`,
+  jobTitle: "Front-End Developer & UI/UX Designer",
+  description: "Front-End Developer and UI/UX Designer with a double degree in Computer Science and Creative Industries (Music & Sound). Specializes in React, TypeScript, Next.js, and modern web technologies.",
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Queensland University of Technology"
+  },
+  knowsAbout: [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "UI/UX Design",
+    "Chakra UI",
+    "Web Development",
+    "Front-End Development",
+    "Design Systems",
+    "Node.js",
+    "PostgreSQL",
+    "AWS"
+  ],
+  sameAs: [
+    SOCIALS_LINKEDIN_URL,
+    SOCIALS_GITHUB_URL
+  ]
+};

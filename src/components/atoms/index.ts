@@ -11,5 +11,6 @@ export * from "./ProjectCarousel";
 export * from "./provider";
 export * from "./Section";
 export * from "./SEOConfig";
+export * from "./StructuredData";
 export * from "./Toaster";
 export * from "./Tooltip";

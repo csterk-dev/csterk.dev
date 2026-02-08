@@ -3,9 +3,11 @@ import { allProjects, type Project } from "@contentlayer/generated";
 import dayjs from "dayjs";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { MDXComponents } from "@atoms";
+import { MDXComponents, SEOConfig } from "@atoms";
 import { ProjectHero } from "@molecules";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
+import { BASE_URL, SITE_OWNER } from "@constants";
+import { ArticleJsonLd } from "next-seo";
 
 const WORDS_PER_MINUTE = 200;
 
@@ -25,34 +27,64 @@ type ProjectPageProps = {
 const ProjectPage = ({ project }: ProjectPageProps) => {
   const MDXContent = useMDXComponent(project.body.code);
 
-  return (
-    <Container
-      px={{
-        base: 8,
-        md: 20
-      }}
-    >
-      <Box as="article" paddingBottom={16}>
-        <ProjectHero
-          description={project.description ?? undefined}
-          maxWidth="4xl"
-          mt={10}
-          mx="auto"
-          publishedDate={useMemo(() => project.date ? dayjs(project.date).format("D MMM YYYY") : undefined, [project.date])}
-          readingTimeMinutes={useMemo(() => readingTimeMinutes(project.body.raw), [project.body.raw])}
-          tags={project.tags}
-          title={project.title}
-        />
-        <Box
-          maxWidth="2xl"
-          mx="auto"
-          pt={8}
+  const projectUrl = `${BASE_URL}/projects/${project.slug}`;
+  const imageUrl = project.image ? (project.image.startsWith("http") ? project.image : `${BASE_URL}${project.image}`) : undefined;
 
-        >
-          <MDXContent components={MDXComponents} />
+  return (
+    <Fragment>
+      <SEOConfig
+        canonical={projectUrl}
+        description={project.description ?? undefined}
+        image={project.image}
+        post={{
+          date: project.date,
+          tags: project.tags
+        }}
+        title={project.title}
+      />
+      {project.date ?
+        <ArticleJsonLd
+          authorName={SITE_OWNER}
+          dateModified={project.date}
+          datePublished={project.date}
+          description={project.description ?? ""}
+          images={imageUrl ? [imageUrl] : []}
+          publisherLogo={`${BASE_URL}/static/images/og-image.png`}
+          publisherName={SITE_OWNER}
+          title={project.title}
+          type="BlogPosting"
+          url={projectUrl}
+        /> :
+        null
+      }
+      <Container
+        px={{
+          base: 8,
+          md: 20
+        }}
+      >
+        <Box as="article" paddingBottom={16}>
+          <ProjectHero
+            description={project.description ?? undefined}
+            maxWidth="4xl"
+            mt={10}
+            mx="auto"
+            publishedDate={useMemo(() => project.date ? dayjs(project.date).format("D MMM YYYY") : undefined, [project.date])}
+            readingTimeMinutes={useMemo(() => readingTimeMinutes(project.body.raw), [project.body.raw])}
+            tags={project.tags}
+            title={project.title}
+          />
+          <Box
+            maxWidth="2xl"
+            mx="auto"
+            pt={8}
+
+          >
+            <MDXContent components={MDXComponents} />
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Fragment>
   );
 };
 
