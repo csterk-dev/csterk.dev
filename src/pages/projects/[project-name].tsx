@@ -10,7 +10,11 @@ import { useMemo } from "react";
 const WORDS_PER_MINUTE = 200;
 
 function readingTimeMinutes(rawBody: string): number {
-  const words = rawBody.trim().split(/\s+/).filter(Boolean).length;
+  const words = rawBody
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .length;
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
