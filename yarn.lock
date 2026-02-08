@@ -1755,11 +1755,6 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.3.0.tgz#d06bbb384ebcf6c505fde1c3d0ed4ddffe0aaff8"
   integrity sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==
 
-"@usesoftwareau/eslint-config-react@^1.0.3":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@usesoftwareau/eslint-config-react/-/eslint-config-react-1.0.4.tgz#e7255560f2b8efbc8f0497fc4bf049dc4f56d54c"
-  integrity sha512-mjfYJbCe6K0Yqw77R7G5wPUekXsYytw678G09RDUYpgloBDf2eRL7Kvhum7HD3D0PNhbHWai13vSBgooIIQPAg==
-
 "@visulima/boxen@^2.0.10":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@visulima/boxen/-/boxen-2.0.10.tgz#fba57fd8f1daeeea8044630a0b470a7f908308f0"
