@@ -96,7 +96,7 @@ export const MDXComponents: Record<string, FC<any>> = {
         fontWeight="bold"
         lineHeight="moderate"
         mb={2}
-        mt={4}
+        mt={6}
         {...props}
       />
     );
@@ -112,7 +112,7 @@ export const MDXComponents: Record<string, FC<any>> = {
         fontWeight="bold"
         lineHeight="moderate"
         mb={2}
-        mt={4}
+        mt={6}
         {...props}
       />
     );
@@ -128,7 +128,7 @@ export const MDXComponents: Record<string, FC<any>> = {
         fontWeight="bold"
         lineHeight="moderate"
         mb={2}
-        mt={3}
+        mt={6}
         {...props}
       />
     );
@@ -144,7 +144,7 @@ export const MDXComponents: Record<string, FC<any>> = {
         fontWeight="bold"
         lineHeight="moderate"
         mb={2}
-        mt={3}
+        mt={6}
         {...props}
       />
     );
