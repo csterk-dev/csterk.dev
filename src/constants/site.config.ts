@@ -246,18 +246,20 @@ export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
     useGradientBg: true
   },
   {
-    name: "Pocket Support",
-    client: "Client Project",
-    tags: ["Complex Logic/UI", "React", "State Management"],
-    image: "https://images.unsplash.com/photo-1587466412525-87497b34fc88?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2673",
-    comingSoon: true
-  },
-  {
     name: "R Jukebox",
     client: "Personal Project",
     tags: ["Personal Passion Project", "React", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1656433031375-5042f5afe894?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2371",
-    comingSoon: true
+    image: "/static/images/projects/jukebox-frame.png",
+    comingSoon: true,
+    useGradientBg: true
+  },
+  {
+    name: "Pocket Support",
+    client: "Client Project",
+    tags: ["Complex Logic/UI", "React", "State Management"],
+    image: "/static/images/projects/pocket-support-frame.png",
+    comingSoon: true,
+    useGradientBg: true
   }
 ];
 
