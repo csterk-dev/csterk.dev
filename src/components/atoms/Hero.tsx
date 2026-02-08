@@ -64,12 +64,16 @@ export const Hero: FC<HeroProps> = ({
       py={8}
       w="100%"
     >
-      {/* Background gradient tracing lines (hidden on viewports ≤480px) */}
+      {/* Background gradient tracing lines (hidden on viewports ≤1024px) */}
       <chakra.svg
         as="svg"
         css={{
           opacity: 0.6,
           visibility: "visible",
+          "@media (max-width: 1024px)": {
+            opacity: 0,
+            visibility: "hidden"
+          },
           "&[data-hidden='true']": {
             opacity: 0,
             visibility: "hidden"
