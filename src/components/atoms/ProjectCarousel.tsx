@@ -131,6 +131,8 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                           base: "60vh",
                           md: "72vh"
                         }}
+                        mb={6}
+                        mt={3}
                         ratio={{
                           base: 4 / 3,
                           md: 16 / 9
@@ -287,7 +289,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
               }}
               top="50%"
               transform="translateY(-50%)"
-              zIndex={2}
+              zIndex={4}
             >
               <LuArrowLeft />
             </ActionButton>
@@ -306,7 +308,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
               }}
               top="50%"
               transform="translateY(-50%)"
-              zIndex={2}
+              zIndex={4}
             >
               <LuArrowRight />
             </ActionButton>
