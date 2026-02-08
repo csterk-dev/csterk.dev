@@ -25,6 +25,16 @@ export const keyframes = defineKeyframes({
     "0%": { transform: "translateX(0)" },
     "100%": { transform: "translateX(-50%)" }
   },
+  "hero-word-fade": {
+    "0%": {
+      opacity: "0",
+      transform: "translateY(4px)" 
+    },
+    "100%": {
+      opacity: "1",
+      transform: "translateY(0)" 
+    }
+  },
   "fade-in": {
     "0%": { opacity: "0" },
     "100%": { opacity: "1" }
@@ -97,6 +107,86 @@ export const keyframes = defineKeyframes({
     },
     "100%": { 
       strokeDashoffset: "175"
+    }
+  },
+  "trace-line-0": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-1": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-2": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-3": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-4": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-5": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-6": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-7": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-8": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
+    }
+  },
+  "trace-line-9": {
+    "0%": { 
+      strokeDashoffset: "100"
+    },
+    "100%": { 
+      strokeDashoffset: "0"
     }
   }
 });

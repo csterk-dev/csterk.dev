@@ -29,20 +29,38 @@ export const MobileLinksMenu: FC<MobileLinksMenuProps> = (buttonProps) => {
             justifyContent="center"
             position="relative"
           >
-            <Box animation={menu.open ? "icon-fade-out" : "icon-fade-in"} pointerEvents={menu.open ? "none" : "auto"}>
+            <Box
+              css={{
+                animation: "icon-fade-in",
+                pointerEvents: "auto",
+                "&[data-hidden]": {
+                  animation: "icon-fade-out",
+                  pointerEvents: "none"
+                }
+              }}
+              data-hidden={menu.open || undefined}
+            >
               <FaBars />
             </Box>
             <Box
               alignItems="center"
-              animation={menu.open ? "icon-fade-in" : "icon-fade-out"}
               bottom={0}
+              css={{
+                animation: "icon-fade-out",
+                pointerEvents: "none",
+                "&[data-visible]": {
+                  animation: "icon-fade-in",
+                  pointerEvents: "auto"
+                }
+              }}
+              data-visible={menu.open || undefined}
               display="flex"
               justifyContent="center"
               left={0}
-              pointerEvents={menu.open ? "auto" : "none"}
               position="absolute"
               right={0}
               top={0}
+              transform="rotate(90deg)"
             >
               <FaX />
             </Box>
@@ -55,6 +73,7 @@ export const MobileLinksMenu: FC<MobileLinksMenuProps> = (buttonProps) => {
           <Drawer.Content>
             <Drawer.Body pt="6" spaceY="3">
               <NavLinksGroup
+                displayProjectsAs="list"
                 flexDir="column"
                 gap={2}
                 handleLinkOnClick={menu.onClose}

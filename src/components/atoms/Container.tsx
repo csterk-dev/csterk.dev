@@ -8,7 +8,7 @@ export const Container = forwardRef<HTMLDivElement, BoxProps>(({ children, ...pr
   <Box
     position="relative"
     px={{
-      base: 4,
+      base: 8,
       md: 20
     }}
     ref={ref}

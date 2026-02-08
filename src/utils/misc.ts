@@ -20,8 +20,8 @@ export function useSSRMediaQuery(query: string[]) {
 
 
 /**
- * Determines if a navigation item should be marked as active based on the current pathname
- * @param currentPath - The current router pathname
+ * Determines if a navigation item should be marked as active based on the current path.
+ * @param currentPath - The current path (use router.asPath; router.pathname is the route pattern in Pages Router).
  * @param navItemHref - The navigation item's href
  * @returns boolean indicating if the nav item is active
  */

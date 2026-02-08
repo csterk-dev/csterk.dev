@@ -1,8 +1,9 @@
-import { Flex, HStack, Stack, StackProps, VStack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Stack, StackProps, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 import { SITE_NAV_ITEMS, SITE_SOCIAL_ITEMS } from "@constants";
 import { FooterLinksGroup } from "./LinksGroup";
 import { Container } from "@atoms";
+import { allProjects } from "@contentlayer/generated";
 
 
 export const Footer: FC<StackProps> = (props) => {
@@ -37,6 +38,24 @@ export const Footer: FC<StackProps> = (props) => {
             </Text>
 
             <FooterLinksGroup links={SITE_NAV_ITEMS} />
+
+            <Text
+              fontSize="md"
+              fontWeight="semibold"
+              my={2}
+              textAlign="center"
+            >
+              Projects:
+            </Text>
+
+            <FooterLinksGroup
+              links={allProjects.map((project) => ({
+                key: project.slug,
+                label: project.title,
+                href: `/projects/${project.slug}`
+              }))}
+              w="100%"
+            />
           </VStack>
 
           <VStack minW="200px">
@@ -57,13 +76,22 @@ export const Footer: FC<StackProps> = (props) => {
       </Container>
 
 
-      <HStack
-        color="text.muted"
-        px={2}
-        py={6}
-      >
-        © 2026 Chris Sterkenburg. All Rights Reserved
-      </HStack>
+      <VStack gap={4} px={2} py={6}>
+        <Text
+          color="text.secondary"
+          fontFamily="heading"
+          fontSize={{
+            base: "lg",
+            md: "xl"
+          }}
+          textAlign="center"
+        >
+          Let's build something that delights.
+        </Text>
+        <HStack color="text.muted" fontSize="sm">
+          © 2026 Chris Sterkenburg. All Rights Reserved
+        </HStack>
+      </VStack>
     </Stack>
   );
 }
