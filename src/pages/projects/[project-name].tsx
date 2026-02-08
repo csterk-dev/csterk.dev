@@ -22,8 +22,13 @@ const ProjectPage = ({ project }: ProjectPageProps) => {
   const MDXContent = useMDXComponent(project.body.code);
 
   return (
-    <Box as="article" paddingBottom={16}>
-      <Container>
+    <Container
+      px={{
+        base: 8,
+        md: 20
+      }}
+    >
+      <Box as="article" paddingBottom={16}>
         <ProjectHero
           description={project.description ?? undefined}
           maxWidth="4xl"
@@ -34,11 +39,16 @@ const ProjectPage = ({ project }: ProjectPageProps) => {
           tags={project.tags}
           title={project.title}
         />
-        <Box maxWidth="2xl" mx="auto" pt={8}>
+        <Box
+          maxWidth="2xl"
+          mx="auto"
+          pt={8}
+
+        >
           <MDXContent components={MDXComponents} />
         </Box>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   );
 };
 

@@ -3,7 +3,7 @@ import { defineSlotRecipe } from "@chakra-ui/react"
 export const sectionSlotRecipe = defineSlotRecipe({
   className: "section",
   slots: ["root", "container", "children", "content", "header", "title", "description", "body", "footer"],
-  // Base variant is centered.
+  // Base variant is centred.
   base: {
     root: {
       maxW: "8xl",
