@@ -5,6 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXComponents } from "@atoms";
 import { ProjectHero } from "@molecules";
+import { useMemo } from "react";
 
 const WORDS_PER_MINUTE = 200;
 
@@ -28,8 +29,8 @@ const ProjectPage = ({ project }: ProjectPageProps) => {
           maxWidth="4xl"
           mt={10}
           mx="auto"
-          publishedDate={project.date ? dayjs(project.date).format("D MMM YYYY") : undefined}
-          readingTimeMinutes={readingTimeMinutes(project.body.raw)}
+          publishedDate={useMemo(() => project.date ? dayjs(project.date).format("D MMM YYYY") : undefined, [project.date])}
+          readingTimeMinutes={useMemo(() => readingTimeMinutes(project.body.raw), [project.body.raw])}
           tags={project.tags}
           title={project.title}
         />
