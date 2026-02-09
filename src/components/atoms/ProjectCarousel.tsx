@@ -1,10 +1,11 @@
 import { AspectRatio, Box, BoxProps, Carousel, IconButton, type IconButtonProps, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
+import { IMAGE_BG_GRADIENT } from "@theme";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { forwardRef } from "react";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 
-const HERO_GRADIENT = "radial-gradient(ellipse 120% 100% at 85% 15%, rgba(15, 163, 160, 0.14) 0%, transparent 50%), radial-gradient(ellipse 90% 80% at 15% 85%, rgba(8, 94, 93, 0.1) 0%, transparent 45%), radial-gradient(ellipse 100% 60% at 50% 50%, rgba(46, 211, 196, 0.06) 0%, transparent 55%), radial-gradient(ellipse 80% 50% at 70% 60%, rgba(11, 126, 125, 0.08) 0%, transparent 40%), radial-gradient(ellipse 150% 120% at 50% 50%, rgba(30, 34, 40, 0.6) 0%, transparent 70%), #1E2228";
+
 
 export interface ProjectItem {
   name: string;
@@ -93,7 +94,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                       </LinkOverlay>
                     ) : null}
                     <Box
-                      background={project.useGradientBg ? HERO_GRADIENT : undefined}
+                      background={project.useGradientBg ? IMAGE_BG_GRADIENT : undefined}
                       height="100%"
                       inset={0}
                       position="absolute"

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, chakra, Flex, FlexProps, Menu, Text } from "@chakra-ui/react";
+import { Button, chakra, Flex, FlexProps, Menu } from "@chakra-ui/react";
 import { HOME_FEATURED_PROJECTS, SITE_NAV_ITEMS } from "@constants";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -105,17 +105,6 @@ export const NavLinksGroup: FC<LinksGroupProps> = ({
 
         {NAV_PROJECTS.length && displayProjectsAs === "list" ? (
           <>
-            <chakra.li w="100%">
-              <Text
-                color="text.secondary"
-                fontSize="sm"
-                fontWeight="semibold"
-                my={2}
-                textAlign="center"
-              >
-                Projects:
-              </Text>
-            </chakra.li>
             {NAV_PROJECTS.map((project) => (
               <chakra.li key={project.href} w="100%">
                 <Button
