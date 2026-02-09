@@ -1,4 +1,5 @@
 import { Box, chakra, Link } from "@chakra-ui/react";
+import { IMAGE_BG_GRADIENT } from "@theme";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { FC, PropsWithChildren } from "react";
@@ -29,7 +30,13 @@ const LinkWrapper: FC<PropsWithChildren & { href: string; }> = (props) => {
 const ProjectImage: FC<{ src: string; alt?: string }> = (props) => {
   const { src, alt = "" } = props;
   return (
-    <Box my={6} width="100%">
+    <Box
+      bg={IMAGE_BG_GRADIENT}
+      borderRadius="lg"
+      my={6}
+      p={4}
+      width="100%"
+    >
       <NextImage
         alt={alt}
         height={800}
@@ -90,13 +97,13 @@ export const MDXComponents: Record<string, FC<any>> = {
       <chakra.h1
         fontFamily="heading"
         fontSize={{
-          base: "2xl",
-          md: "3xl"
+          base: "3xl",
+          md: "4xl"
         }}
         fontWeight="bold"
         lineHeight="moderate"
-        mb={2}
-        mt={6}
+        mb={3}
+        mt={12}
         {...props}
       />
     );
@@ -106,13 +113,13 @@ export const MDXComponents: Record<string, FC<any>> = {
       <chakra.h2
         fontFamily="heading"
         fontSize={{
-          base: "xl",
-          md: "2xl"
+          base: "2xl",
+          md: "3xl"
         }}
         fontWeight="bold"
         lineHeight="moderate"
-        mb={2}
-        mt={6}
+        mb={3}
+        mt={10}
         {...props}
       />
     );
@@ -122,13 +129,13 @@ export const MDXComponents: Record<string, FC<any>> = {
       <chakra.h3
         fontFamily="heading"
         fontSize={{
-          base: "lg",
-          md: "xl"
+          base: "xl",
+          md: "2xl"
         }}
         fontWeight="bold"
         lineHeight="moderate"
         mb={2}
-        mt={6}
+        mt={8}
         {...props}
       />
     );
@@ -138,8 +145,8 @@ export const MDXComponents: Record<string, FC<any>> = {
       <chakra.h4
         fontFamily="heading"
         fontSize={{
-          base: "md",
-          md: "lg"
+          base: "lg",
+          md: "xl"
         }}
         fontWeight="bold"
         lineHeight="moderate"
@@ -220,6 +227,89 @@ export const MDXComponents: Record<string, FC<any>> = {
       return <Box as="code" color="text.primary" rounded="lg">{`\`${props.children}\``}</Box>;
     }
     return <code {...props} />;
+  },
+  table(props) {
+    return (
+      <Box my={6} overflowX="auto" width="100%">
+        <chakra.table
+          borderColor="surface.border"
+          borderWidth="1px"
+          fontSize={{
+            base: "sm",
+            md: "md"
+          }}
+          rounded="lg"
+          width="100%"
+          {...props}
+        />
+      </Box>
+    );
+  },
+  thead(props) {
+    return (
+      <chakra.thead
+        bg="surface.raised"
+        {...props}
+      />
+    );
+  },
+  tbody(props) {
+    return (
+      <chakra.tbody
+        {...props}
+      />
+    );
+  },
+  tr(props) {
+    return (
+      <chakra.tr
+        _last={{ borderBottomWidth: 0 }}
+        borderBottomWidth="1px"
+        borderColor="surface.border"
+        {...props}
+      />
+    );
+  },
+  th(props) {
+    return (
+      <chakra.th
+        borderBottomWidth="1px"
+        borderColor="surface.border"
+        color="text.primary"
+        fontFamily="heading"
+        fontSize={{
+          base: "sm",
+          md: "md"
+        }}
+        fontWeight="bold"
+        px={{
+          base: 3,
+          md: 4
+        }}
+        py={{
+          base: 2,
+          md: 3
+        }}
+        textAlign="left"
+        {...props}
+      />
+    );
+  },
+  td(props) {
+    return (
+      <chakra.td
+        color="text.secondary"
+        px={{
+          base: 3,
+          md: 4
+        }}
+        py={{
+          base: 2,
+          md: 3
+        }}
+        {...props}
+      />
+    );
   }
   // LinkCover(props) {
   //   const { href, title, ...rest } = props;

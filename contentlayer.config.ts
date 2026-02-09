@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import remarkGfm from "remark-gfm";
 
 export const Project = defineDocumentType(() => ({
   name: "Project",
@@ -31,5 +32,8 @@ export const Project = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Project]
+  documentTypes: [Project],
+  mdx: {
+    remarkPlugins: [remarkGfm]
+  }
 });

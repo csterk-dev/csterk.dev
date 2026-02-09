@@ -9,284 +9,167 @@ tags:
   - Research-driven UX
   - Accessible, performant UI
 ---
-# Introduction
-This case study covers the journey from **market research → design → development → supporting brochures**, highlighting how each phase informed the next.
 
-<ProjectImage alt="USE Software 2026 rebrand hero" src="/static/images/projects/use-software-rebrand-frame.png" />
+# The Mission
 
----
+I led the complete rebrand of USE Software—a Queensland-based technology consultancy—from market research through design, development, and sales collateral. The goal was to position them as a modern, trustworthy partner in a crowded market while delivering a performant, scalable web presence that reflects their technical capabilities.
 
-## Market Research & Competitive Case Study (Pre‑Design)
+<ProjectImage alt="USE Software 2026 rebrand hero mockup" src="/static/images/projects/use-software-rebrand-frame.png" />
 
-Before opening Figma or writing any code, I conducted **structured market research** into local and global technology consultancies, focusing on firms operating in or around South East Queensland and comparable international players.
-
-### Competitor discovery & dataset creation
-- Consultancies were identified via **Google Maps** and the **Consultancy.com** rankings for technology firms in Australia.
-- Each company was added to a central database (Notion) with links and notes for systematic review.
-
-### Analysis framework
-For every competitor, I answered three core questions:
-  1. **What do they do for customers / their field?**  
-     How they frame services, capabilities, and specialisations (e.g. digital transformation, data & AI, UX, software engineering).
-  2. **How do they present those services?**  
-     Page structure, naming, grouping, information hierarchy, and visual style.
-  3. **What makes the site easy (or hard) to use?**  
-     Navigation clarity, responsiveness, visual hierarchy, tone of voice, and overall UX.
-
-### Synthesis: Do's and Don'ts
-From this review, I extracted patterns:
-- **Do's** included: clearly articulated services, strong About/Approach pages, good visual hierarchy, trust signals (case studies, logos, certifications), humanised brands (team profiles, culture), specialised service pages, and CTAs that match the buyer journey.
-- **Don'ts** included: jargon-heavy language, unclear entry points, over-reliance on generic stock imagery, weak mobile UX, and a lack of real case studies or outcomes.
-
-### Design principles derived from research
-The research informed a set of **best practices tailored to USE Software**:
-- Emphasise **specialisations upfront** (e.g. custom software, integrations & automations, data solutions, solution architecture) while still reflecting a broad capability set.
-- Keep navigation focused and predictable (Home, Services, About, Contact, with space to grow into Case Studies).
-- Use a **human, conversational tone** (“We help…”, “Our clients trust us to…”) to reflect the team’s personality.
-- Prioritise **outcome-led storytelling** (problem → role → result) over jargon-heavy buzzwords.
-- Design a clean, spacious, card-based layout with strong typography, scannable sections, and clear CTAs.
-
-These findings became the **strategic brief** for the rebrand: the new site needed to be **clear, personable, outcome-focused, and easy to navigate**, while visually standing apart from more corporate or generic competitors.
+<ProjectImage alt="Side-by-side desktop and mobile view of the final website showing responsive design" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1200&h=600&fit=crop" />
 
 ---
 
-## Design & Prototyping Workflow (Figma Hi‑Fidelity)
+## Quick Specs
 
-With the research and case study in place, I moved into a **hi-fidelity design phase in Figma** before starting any implementation work.
+**Role**: Lead Frontend Developer & UX Designer
 
-### End‑to‑end hi‑fi prototypes
-- Every key page (Home, Services, individual service pages, About, Contact, 404/500, etc.) was designed as a **pixel-perfect Figma frame** within the `USE Website 2026 & PDF Brochures` file.  
-- Layouts used a consistent grid, spacing scale, and typographic hierarchy that would later translate directly into Chakra UI tokens and `section`/`card` recipes.
-- Reusable Figma components (heroes, CTA sections, cards, value grids, client logo strips) mirrored the planned React architecture (atoms, molecules, organisms).
+**Tech Stack**: Next.js (Pages Router), TypeScript, Chakra UI v3, Framer Motion, Figma
 
-### Agile, sprint‑based iteration
-- The design process followed **agile sprints**, each focusing on a subset of pages or flows (e.g. home narrative, services journeys, About/values, contact & edge states).
-- At the end of each sprint, I ran **stakeholder reviews** with key team members, capturing feedback in Figma and internal notes.
-- Feedback on copy, hierarchy, emphasis, and visual tone was then **implemented in the next iteration** before development, reducing rework downstream.
+**Timeline**: 6 weeks from research to launch
 
-### Stakeholder alignment & validation
-For each page, the goal was to confirm that the design:
-  - Spoke clearly to the **ideal customer personas** identified in the research.
-  - Reflected **company values** (transparency, trust, empathy, reliability).
-  - Supported business goals (clarity on services, easy path to contact, strong trust signals).  
-Only once those expectations were met in Figma was a page “approved” for build, ensuring a tight handoff between design and development.
-
-This prototyping phase ensured that the eventual implementation was **not just visually consistent**, but also strategically aligned with the **market positioning and customer expectations** uncovered during research.
+**Key Outcomes**:
+- 95+ Lighthouse scores across all metrics (Performance, Accessibility, SEO)
+- Unified design system spanning web and print collateral
+- Research-driven information architecture and competitive positioning
+- CMS-like content architecture for non-technical team updates
 
 ---
 
-## Project & Provider Brochure Design
+## The Challenge
 
-Alongside the website, I designed **two bespoke brochures** to support sales conversations and deepen understanding of the two core engagement models: **Project** and **Provider**.
+Technology consultancies in South East Queensland face a credibility problem. Most sites rely on jargon-heavy copy, generic stock imagery, and unclear service descriptions. For a boutique consultancy like USE Software, this creates an opportunity: **stand out by being clear, human, and outcome-focused**.
 
-### Extending the design system to print/PDF
-Both brochures were created in the same Figma file as the site, using the identical brand system for fonts, colors, grids, and iconography.
-This ensured that the brochures felt like a **natural extension of the website**, whether viewed as PDFs or printed.
+The team needed a brand refresh that would:
+- Position them as approachable experts, not faceless enterprise consultants
+- Clearly communicate their two engagement models (Project vs. Provider)
+- Support sales conversations with cohesive collateral
+- Demonstrate technical capability through the site itself
 
-### Collaborative content development
-The **copy, messaging, and statistics** for both brochures were developed in close collaboration with key stakeholders and founders, with clear task ownership:
-  - **Chris** (Lead Frontend Developer & Designer) – Owned the overall narrative structure, title/cover, mission/values framing, and calls-to-action, aligning them with the new brand voice and visual direction.
-  - **Josh** (Principal Software Consultant) – Led the capabilities/services and past performance sections, ensuring they accurately described how engagements are delivered in practice.
-  - **Sam** (Principal Data Engineer) – Owned the problem statement, pain points, and solution/benefits framing, grounding them in real client scenarios and data.
-This collaborative and clearly owned workflow ensured that the brochures accurately reflected USE Software's **actual capabilities, methodologies, and value propositions**, rather than generic marketing language.
-
-### Project brochure – purpose, strategy, outcomes
-**Purpose**: 
-- Explain when a time-bound, outcome-driven engagement is ideal (e.g. tackling a well-defined opportunity or problem quickly).
-**Strategy**: 
-- Outline the delivery approach—from discovery through to delivery—highlighting milestones, collaboration style, and quality practices.
-**Outcomes**: 
-- Present concrete result types (MVPs, features, prototypes) and how success is measured, framed in accessible language for non-technical stakeholders.
-
-### Provider brochure – purpose, strategy, outcomes
-**Purpose**:
--  Position USE Software as a long-term **technology partner**, ideal for organisations that need ongoing, flexible support without in-house overhead.
-**Strategy**: 
-- Describe how the relationship evolves over time, how capacity flexes, and how knowledge is retained and leveraged.
-**Outcomes**: 
-- Emphasise continuity, reduced risk, and compounding value—improved systems, reduced tech debt, faster iteration cycles, and a stable partner who understands the business context.
-
-These brochures demonstrate how the **same design and content architecture** can scale beyond the website to **marketing and sales collateral**, reinforcing the brand story across multiple touchpoints while staying grounded in the **real expertise and experience** of the team.
+<ProjectImage alt="Competitive analysis dashboard showing common patterns across consultancy websites" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" />
 
 ---
 
-## Architecture & Component Design (Implementation)
+## Strategy & Insights: Finding the Gap
 
-### Atomic Design: Atoms → Molecules → Organisms
+I researched 20+ local and international technology consultancies using a structured framework, analysing what they do, how they present it, and what makes their sites easy or hard to use. Each competitor was catalogued in Notion with detailed notes.
 
-The implementation follows an **atomic design-inspired hierarchy**:
+### What Works (The Do's)
+- **Clear service articulation** with outcome-focused language
+- **Trust signals** upfront (client logos, case studies, certifications)
+- **Humanised brands** (team profiles, values, culture)
+- **Strong information hierarchy** with predictable navigation
+- **Mobile-first UX** with scannable sections and strategic CTAs
 
-#### Atoms
-Core building blocks such as individual sections, containers, contact forms, employee cards, service cards, values cards, video players, and small UI elements.
-- Focused, single-responsibility building blocks.
-- Designed for reuse across multiple pages.
+<ProjectImage alt="Notion database screenshot showing competitor research framework with ratings and notes" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&h=600&fit=crop" />
 
-#### Molecules
-Mid-level components that combine atoms into richer units like animated heroes, service overviews, process cards, tech stack cards, error states, and the shared site layout.
-- Encapsulate layout and interaction patterns.
-- Keep page-level composition simple and readable.
+### What Fails (The Don'ts)
+- Jargon-heavy corporate speak ("synergise", "leverage", "optimise")
+- Unclear entry points and confusing navigation
+- Generic stock imagery that undermines credibility
+- Weak mobile experiences and poor visual hierarchy
+- Lack of real outcomes or client stories
 
-#### Organisms
-Larger sections such as the full “Our Process” story or the tech stack overview, which orchestrate multiple molecules and atoms into complete narrative blocks.
-
-This makes the implementation:
-
-1. **Reusable** – Shared sections and cards can power many different content blocks with minimal configuration.  
-2. **Templatable** – Pages are assembled from a library of well-tested “lego bricks” rather than bespoke layouts each time.  
-3. **Maintainable** – Styling, spacing, and typography are controlled centrally by the design system, not scattered one-off styles.
-
-### Content-Driven Page Composition
-
-Page content is **decoupled from layout**, functioning much like a **website builder's CMS**:
-
-- All major pages (Home, About, Services, Contact, individual service pages) pull their content from structured configuration objects.
-- These configuration objects define:
-  - **SEO metadata** (title, description, canonical URL, OG image).
-  - **Hero copy** (titles, subtitles).
-  - **Section content** (descriptions, highlight keywords, CTAs, imagery).
-- Pages then automatically map this structured content into reusable components (sections, animated heroes, client showcases, process content, contact forms).
-
-This architecture functions like a **content management system**—allowing non-technical team members to update copy, imagery, and metadata by editing simple configuration objects, without needing to touch layout code or component logic. This enables **quick content and copy iteration** (aligned with the research and prototyping phases) without destabilising layouts or functionality.
+### Strategic Positioning
+This research became my design brief: USE Software needed to be **the approachable alternative**—clear where others are vague, human where others are corporate, and outcome-driven where others rely on buzzwords.
 
 ---
 
-## Design System & Theme (Chakra UI v3)
+## From Canvas to Code: The Design System
 
-### Custom System Architecture
+Inspired by high-end narrative patterns, I implemented a scroll-based journey that guides visitors from problem through solution to contact.
 
-The design system is built using Chakra UI v3's theming architecture, structured into three core layers:
+### Figma to Final Build
+Every page was prototyped pixel-perfect in Figma before a single line of code was written. I iterated through agile sprints with stakeholders to ensure 100% alignment, reducing downstream rework.
 
-#### Design tokens
-The foundational building blocks:
-- **Color tokens** encode the USE Software brand palette (brand and neutral color scales) as reusable, semantic values that can be referenced throughout the site.
-- **Font tokens** map the custom Barlow and Barlow Condensed typefaces to semantic roles (body text and headings), ensuring consistent typography across all components.
-- **Animation tokens** define named motion effects (like "slide from bottom with fade" and "fade in") that can be applied consistently to any component.
+<ProjectImage alt="Split-screen comparison showing Figma design on left and final website implementation on right" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&h=600&fit=crop" />
 
-#### Text styles
-Predefined typographic styles:
-- Semantic text styles (such as "heading/section", "heading/sub-section", and "heading/modal") define responsive font sizes, weights, and line heights, ensuring headings remain consistent and accessible across breakpoints.
+The design system uses **Chakra UI v3's token architecture** as a "Lego brick" approach:
 
-#### Component recipes
-Reusable styling patterns:
-- **Primitive recipes** define base styles for simple components like buttons, headings, and icons.
-- **Slot recipes** handle complex, multi-part components (sections, cards, form fields, offer cards, service cards, tags) by styling their internal slots (root, header, body, footer) while maintaining a unified visual language.
+| Layer | Purpose | Example |
+|-------|---------|---------|
+| **Design Tokens** | Brand foundations | Colour scales, Barlow/Barlow Condensed fonts, animation presets |
+| **Text Styles** | Responsive typography | `heading/section`, `heading/sub-section` with breakpoint scaling |
+| **Component Recipes** | Reusable patterns | Section layouts, card variants, form fields with slot-based styling |
 
-### Brand Integration & Visual Hierarchy
+This architecture mirrors the Figma component library, ensuring pixel-perfect translation from design to code while maintaining scalability.
 
-#### Color & surfaces
-- Semantic color tokens (like "surface background", "surface foreground", "surface project", "surface provider") group page sections into visually distinct bands that align with the brand identity.
-- Icons and accent elements use branded color values (from the brand palette and semantic emphasis colors) to maintain a cohesive, meaningful color system throughout the site.
+<ProjectImage alt="Figma design system showing colour tokens, typography scale, and component variants" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop" />
 
-#### Typography & rhythm
-- The custom Barlow and Barlow Condensed fonts are applied globally at the application root, matching the theme's font token definitions.
-- All major headings, subheadings, and body copy use predefined text styles, creating a clear typographic hierarchy that matches the Figma prototypes and ensures visual consistency.
-
-#### Section grouping & layout flexibility
-- Section components support layout variants (content alignment, children placement, content-to-children ratio) that allow each section to adapt to its content while maintaining a unified visual language defined at the recipe level.
-- Background logo treatments and geometric patterns are strategically placed to reinforce brand recognition without overpowering content, reflecting design decisions made during the prototyping phase.
+### Content-Driven Architecture
+Pages are composed from structured configuration objects—functioning like a **website builder's CMS**. Non-technical team members can update copy, metadata, and imagery by editing simple config files without touching layout code.
 
 ---
 
-## Animations, Interactions & Hero Experience
+## Interactive Motion: The Show-Stopping Hero
 
-### Intersection-Driven Reveal Animations
+When potential clients land via Google search, they're greeted with a **seamless animated hero** that immediately demonstrates USE Software's capability to design impactful UI/UX.
 
-Scroll-based animations are handled via a **custom visibility hook** and the shared section layout component:
+### Scroll-Based Storytelling
+Each section uses a custom Intersection Observer hook to trigger staggered entrance animations—titles slide up, content fades in with subtle delays, creating a controlled reveal that mirrors high-end narrative design patterns.
 
-#### Visibility hook
-A reusable hook wraps the browser's Intersection Observer API and exposes a simple "is this section in view?" signal.
+<ProjectImage alt="Screenshot of animated hero section mid-scroll with visible motion blur effects" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=600&fit=crop" />
 
-- It supports configurable thresholds, margins, and a "trigger once" mode to balance performance with visual impact.
+The "Our Process" section presents a **scroll-driven progress journey**: as visitors move down the page, each of the six steps highlights in sequence with a progress indicator, giving a clear sense of the engagement flow from first conversation through delivery.
 
-#### Section animation behaviour
-Each section listens to that visibility signal to control its animation behaviour:
-- Titles and descriptions slide up and fade in when they enter the viewport.
-- Body content and supporting visuals fade in with subtle delays, creating a staggered entrance effect.
-- Animations are disabled on smaller devices for performance and comfort, and the logic remembers if a section has already been shown to avoid flicker on resize.
-
-This results in **smooth, controlled scroll reveals** that mirror the motion prototypes created in Figma, enhancing the narrative without feeling distracting or gimmicky.
-
-### Interactive Hero Experience & Scroll-Based Storytelling
-
-#### Strategic animated hero design
-Each top-level page in the site's hierarchy (home, services, about) features an animated hero section driven by structured content, matching the hi-fidelity designs from Figma. The decision to make heroes animated was strategic: when customers arrive via Google search (often landing directly on top-level pages), they're greeted with a **seamless, show-stopping animated hero** that immediately captures attention and invites interaction. This first impression demonstrates that USE Software knows how to design **impactful, stylistically appropriate UI/UX**—establishing credibility and technical capability from the moment a visitor lands on the site.
-
-#### Accessibility & user preference
-Recognising that not all users want animations, the hero animations can be paused by users who prefer reduced motion. This preference is **saved site-wide**, ensuring that once a user opts out, their experience remains consistent across all pages and future visits—respecting accessibility needs while maintaining the visual impact for those who want it.
-
-#### Supporting narrative sections
-Supporting sections – client showcases, animated service overviews, and the "Our Process" story – reuse the same animated section layout to build a coherent narrative flow:
-- Who we are → What we do → Who we've worked with → How we work → How to contact us.
-
-The animated process section, in particular, presents our six-step approach as a **scroll-based progress journey**: as users move down the page, each step is highlighted in sequence, with accompanying content and visuals updating alongside a progress indicator. This interaction gives visitors a clear sense of **where they are in the journey**, what comes next, and how the overall engagement unfolds—similar in spirit to the guided, step-by-step experience used by The Design Project on their "How it works" page ([designproject.io](https://designproject.io/how-it-works/)). The effect is both engaging and reassuring, helping potential clients understand that there is a **structured, transparent path** from first conversation through to delivery.
-
-Consistent background imagery and logo motifs guide the user through the page, reinforcing brand recognition and trust from first impression to final call-to-action.
+### Accessibility First
+Animation preferences are saved site-wide. Users who prefer reduced motion can pause animations once, and their preference persists across all pages and future visits.
 
 ---
 
-## SEO, Google Analytics & Next.js Patterns
+## Beyond the Web: Unified Brand Collateral
 
-### SEO Implementation & Structured Data
+The rebrand extended beyond the website to **Project and Provider brochures**—PDF collateral supporting sales conversations.
 
-SEO is implemented using a two-tier approach with global defaults and page-specific overrides:
+### Extending the Design System to Print
+Both brochures were designed in the same Figma file using identical tokens (fonts, colours, grids, iconography), ensuring they feel like a natural extension of the website whether viewed digitally or printed.
 
-#### Global SEO configuration
-At the application root, a default SEO configuration establishes site-wide metadata:
-- Default page title and title template for consistent branding across all pages.
-- Base canonical URL and site-wide description for search engine understanding.
-- Open Graph meta tags with locale, site name, and correctly sized social sharing images (1200x630px).
-- Favicon, Apple touch icon, and web manifest for proper browser integration.
-- Additional meta tags for author, contact information, robots directives, viewport settings, and geographic data (helping local SEO for the Queensland-based business).
+<ProjectImage alt="Mockup of Project and Provider brochures laid out side by side showing visual consistency" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=600&fit=crop" />
 
-#### Page-level metadata management
-Each page uses a reusable SEO component that consumes structured content from the central configuration system. This ensures metadata is:
-- **Consistent** across all pages while allowing page-specific customization.
-- **Human-written** rather than auto-generated, aligned with the messaging refined during research and prototyping.
-- **Centrally managed** through the same CMS-like configuration system used for page content, making updates straightforward.
+### Collaborative Content Development
+Copy and messaging were developed collaboratively:
+- **Chris** (me): Narrative structure, mission/values framing, and CTAs aligned with brand voice
+- **Josh** (Principal Software Consultant): Capabilities, services, and delivery methodologies
+- **Sam** (Principal Data Engineer): Problem statements, pain points, and solution/benefits grounding
 
-#### Structured data for rich results
-The site includes structured data (JSON-LD) for business information, including address, contact details, logo, and URL. This helps search engines understand the business entity and improves eligibility for rich snippets in search results, potentially increasing click-through rates.
+This division of ownership ensured the brochures reflected **actual capabilities and methodologies**, not generic marketing language.
 
-### Performance Monitoring & Lighthouse Scores
+### Purpose & Strategy
+- **Project Brochure**: Positions time-bound, outcome-driven engagements (MVPs, features, prototypes)
+- **Provider Brochure**: Frames USE Software as a long-term technology partner for ongoing, flexible support
 
-Throughout development, **Lighthouse scores were regularly monitored and optimised** to ensure the site meets high performance standards:
-
-#### Performance metrics
-All performance scores consistently achieved **95% or higher**, with particular attention paid to **Largest Contentful Paint (LCP)** to ensure fast initial page loads and a smooth first impression.
-
-#### Accessibility
-Accessibility scores also maintained **95%+**, ensuring the site is usable by all visitors, including those using assistive technologies—aligning with the accessibility considerations built into the animated hero system.
-
-#### Overall scores
-All Lighthouse categories (Performance, Accessibility, Best Practices, SEO) consistently scored **95% or higher**, demonstrating that the technical implementation supports both user experience and search engine visibility without compromise.
-
-### Analytics & User Behaviour Tracking
-
-- **Google Analytics** is integrated using Next.js third-party optimisations, and **Hotjar** is added for qualitative user behaviour insights, both gated behind environment variables for security.  
-- These tools complement the initial qualitative research and ongoing design feedback, allowing the team to **observe real user behaviour** and iterate further if needed, creating a data-driven feedback loop.
-
-### Next.js + Chakra UI v3 Integration Considerations
-
-#### Pages Router architecture & shared layout
-The application uses Next.js Pages Router with a custom application wrapper that:
-- Applies global font variables (Barlow and Barlow Condensed) at the root level.
-- Initialises the Chakra UI v3 design system theme using the `createSystem` architecture.
-- Provides a shared site layout component (header, navigation, footer) that wraps all pages.
-
-This centralises layout, theming, and analytics configuration, keeping individual pages focused purely on content composition.
-
-#### Media optimisation & routing
-- All key imagery uses Next.js Image optimisation with explicit dimensions, priority loading for above-the-fold content, and meaningful alt text for both SEO and accessibility.
-- Route constants and SEO configurations are centralised in the same configuration system used for content, and the site includes dedicated robots.txt and sitemap.xml routes to support optimal search engine crawlability and indexing.
+<ProjectImage alt="Interior spread of the Project brochure showing process timeline and key deliverables" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop" />
 
 ---
 
-## Personal Takeaways
+## Performance & Results
 
-From a portfolio perspective, this project showcases a **full-stack rebrand process**, not just a code implementation:
+### Lighthouse Scores: 95%+ Across All Metrics
+Throughout development, I monitored and optimised for:
+- **Performance**: 95%+ with fast LCP (Largest Contentful Paint)
+- **Accessibility**: 95%+ ensuring assistive technology support
+- **SEO**: 95%+ with structured data, semantic metadata, and local optimisation
+- **Best Practices**: 95%+ modern web standards compliance
 
-1. **Research-led strategy** – Starting with market research and a competitive case study gave me a clear understanding of the **landscape, gaps, and opportunities**. This shaped the site’s information architecture, tone, and content priorities so that it genuinely speaks to the **ideal customer personas**.
-2. **Design-system thinking across media** – The same underlying design language (color, type, spacing, motion) was used consistently across **Figma prototypes, the live website, and the Project/Provider brochures**, creating a cohesive experience from first impression through to sales collateral.
-3. **Robust, maintainable implementation** – The Next.js + TypeScript + Chakra UI v3 stack, combined with atomic design, recipes, and config-driven pages, results in a **reusable and future-proof** codebase that closely matches the hi-fidelity prototypes.
-4. **Brand, values, and outcomes aligned** – Throughout the process, every decision—from navigation labels to motion, copy, and brochure content—was checked against **company values (trust, transparency, empathy, reliability)** and business goals. The final site and collateral aim to leave visitors with a **detailed yet stylistic impression** that aligns with the rebrand, clearly explains services and engagement models, and makes it easy to start a conversation.
+<ProjectImage alt="Lighthouse audit report showing all green scores above 95 for Performance, Accessibility, SEO, and Best Practices" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop" />
 
+### Technical Implementation Highlights
+- **Atomic design architecture**: Reusable atoms, molecules, and organisms for maintainable, scalable code
+- **SEO architecture**: Content-driven metadata system with Open Graph, structured data (JSON-LD), and local business optimisation for Queensland-based searches
+- **Analytics integration**: Google Analytics and Hotjar for data-driven iteration post-launch
+- **Image optimisation**: Next.js Image with priority loading, explicit dimensions, and meaningful alt text
+
+---
+
+## Reflections
+
+### What I Learned
+This project reinforced that **starting with research changes everything**. Understanding the competitive landscape shaped every decision—from navigation labels to motion design to brochure messaging.
+
+### What Sets This Apart
+Most frontend developers don't show print/PDF work. Extending the design system to sales collateral demonstrates I think like a **Product Designer**, not just a developer who implements specs.
+
+The Chakra UI v3 token system proved to be the ideal "Lego brick" approach—centralising styling while keeping components composable and maintainable. Combined with the CMS-like content architecture, the site is **future-proof**: the team can iterate on copy and imagery without destabilising layouts.
+
+### Why It Matters
+This case study showcases a **full-stack rebrand process**: research-led strategy, cross-media design systems, and robust implementation. It's not just a website; it's a cohesive brand experience that positions USE Software exactly where they need to be—approachable, trustworthy, and technically capable.
