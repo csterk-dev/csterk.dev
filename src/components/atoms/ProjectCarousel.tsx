@@ -196,7 +196,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects, auto
                             textAlign="center"
                             textTransform="uppercase"
                           >
-                            Coming Soon
+                            Article Coming Soon
                           </Text>
                         </Box>
                       ) : null}

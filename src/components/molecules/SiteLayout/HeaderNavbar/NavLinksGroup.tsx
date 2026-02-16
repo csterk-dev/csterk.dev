@@ -86,6 +86,7 @@ export const NavLinksGroup: FC<LinksGroupProps> = ({
                         key={project.href}
                         color={isActive ? "accent.primary" : undefined}
                         value={project.href}
+                        asChild
                       >
                         <NextLink
                           aria-current={isActive ? "page" : undefined}

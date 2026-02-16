@@ -246,11 +246,11 @@ export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
     useGradientBg: true
   },
   {
-    name: "R Jukebox",
+    name: "R-Jukebox",
     client: "Personal Project",
-    tags: ["Personal Passion Project", "React", "UI/UX Design"],
+    tags: ["Real-time WebSocket architecture", "Browser automation & Puppeteer", "Design systems & seasonal theming"],
     image: "/static/images/projects/jukebox-frame.png",
-    comingSoon: true,
+    href: "/projects/jukebox",
     useGradientBg: true
   },
   {
