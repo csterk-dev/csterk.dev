@@ -18,7 +18,7 @@ const LinkWrapper: FC<PropsWithChildren & { href: string; }> = (props) => {
     );
   }
   return (
-    <Link asChild>
+    <Link colorPalette="brand" variant="underline" asChild>
       <NextLink href={href} rel="noopener noreferrer" target="_blank">
         {children}
       </NextLink>
@@ -53,9 +53,25 @@ const ProjectImage: FC<{ src: string; alt?: string }> = (props) => {
   );
 };
 
+const InlineIcon: FC<{ src: string; alt?: string }> = (props) => {
+  const { src, alt = "" } = props;
+  return (
+    <chakra.img
+      alt={alt}
+      display="inline"
+      height="1.2em"
+      marginRight="0.5em"
+      src={src}
+      verticalAlign="text-bottom"
+      width="1.2em"
+    />
+  );
+};
+
 export const MDXComponents: Record<string, FC<any>> = {
   a: LinkWrapper,
   ProjectImage,
+  InlineIcon,
   strong(props) {
     return (
       <chakra.span color="accent.secondary" fontWeight="semibold" {...props} />
