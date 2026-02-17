@@ -240,7 +240,7 @@ export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
   {
     client: "USE Software",
     href: "/projects/use-software-rebrand",
-    image: "/static/images/projects/use-software-rebrand-frame.png",
+    image: "/static/images/projects/use-rebrand/use-software-rebrand-frame.png",
     name: "USE Software 2026 Rebrand",
     tags: ["Design systems & theming", "Research-driven UX", "Accessible, performant UI"],
     useGradientBg: true

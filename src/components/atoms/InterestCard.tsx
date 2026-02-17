@@ -9,7 +9,7 @@ type InterestCardProps = {
 
 export const InterestCard: FC<InterestCardProps> = ({ description, icon, title }) => {
   return (
-    <Card.Root variant="default" w="100%">
+    <Card.Root variant="interactive" w="100%">
       <Card.Body p={4}>
         <HStack alignItems="flex-start" gap={3}>
           <Icon

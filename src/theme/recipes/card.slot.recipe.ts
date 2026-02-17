@@ -59,6 +59,19 @@ export const cardSlotRecipe = defineSlotRecipe({
 
       interactive: {
         root: {
+          _hover: {
+            boxShadow: "glow.interactive",
+            transform: "translateY(-1px)"
+          },
+          _focusVisible: {
+            outline: "none",
+            boxShadow: "glow.focus"
+          }
+        }
+      },
+
+      clickable: {
+        root: {
           cursor: "pointer",
           _hover: {
             boxShadow: "glow.interactive",
