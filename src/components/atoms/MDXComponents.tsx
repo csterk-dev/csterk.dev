@@ -27,10 +27,11 @@ const LinkWrapper: FC<PropsWithChildren & { href: string; }> = (props) => {
 };
 
 
-const ProjectImage: FC<{ src: string; alt?: string }> = (props) => {
-  const { src, alt = "" } = props;
+const ProjectImage: FC<{ src: string; alt?: string, showAlt?: boolean }> = (props) => {
+  const { src, alt = "", showAlt } = props;
   return (
     <Box
+      as="figure"
       bg={IMAGE_BG_GRADIENT}
       borderRadius="lg"
       my={6}
@@ -49,6 +50,7 @@ const ProjectImage: FC<{ src: string; alt?: string }> = (props) => {
         }}
         width={1200}
       />
+      {showAlt ? <chakra.p as="figcaption" fontSize="sm" mt={4}>{alt}</chakra.p> : null}
     </Box>
   );
 };
