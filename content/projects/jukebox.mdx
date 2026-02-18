@@ -3,7 +3,7 @@ title: R-Jukebox
 description: A collaborative music player running on a Raspberry Pi, enabling real-time YouTube playback control across multiple devices using Puppeteer, WebSockets, and a custom design system.
 slug: jukebox
 date: 2024-02-15
-image: "/static/images/projects/jukebox-frame.png"
+image: "/static/images/projects/jukebox/jukebox-frame.png"
 tags:
   - Real-time WebSocket architecture
   - Browser automation & Puppeteer
@@ -14,9 +14,9 @@ tags:
 
 A production-ready music player that transforms a Raspberry Pi into a shared jukebox, allowing anyone on the Wi-Fi to search, queue, and control YouTube playback in real-time.
 
-<ProjectImage alt="R-Jukebox hero showing the animated lava lamp interface" src="/static/images/projects/jukebox-frame.png" />
+<ProjectImage alt="R-Jukebox hero showing the animated lava lamp interface" src="/static/images/projects/jukebox/jukebox-frame.png" />
 
-<ProjectImage alt="R-Jukebox interface showing queue, history, and playback controls" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&h=600&fit=crop" />
+<ProjectImage alt="R-Jukebox interface showing search results via the Youtube Search API" src="/static/images/projects/jukebox/search.png" showAlt />
 
 ---
 
@@ -44,7 +44,7 @@ A production-ready music player that transforms a Raspberry Pi into a shared juk
 
 As the unofficial office DJ, I faced a hardware conflict: I couldn't stream curated music to the team via Bluetooth while simultaneously using my own computer for personal music. R-Jukebox was born to offload the "Office DJ" role to a dedicated Raspberry Pi, allowing anyone on the Wi-Fi to contribute to the vibe in real-time.
 
-<ProjectImage alt="Raspberry Pi setup connected to Bluetooth speaker" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop" />
+<ProjectImage alt="Raspberry Pi 5" src="/static/images/projects/jukebox/rpi5.png" showAlt />
 
 ---
 
@@ -65,7 +65,7 @@ Importantly, **embedded YouTube videos don't display ads**—enabling uninterrup
 | **Real-Time Sync** | Broadcasts state changes to all connected clients | WebSockets |
 | **State Management** | Stores playback history and queue | SQLite |
 
-<ProjectImage alt="Architecture diagram showing client devices connecting to Raspberry Pi via WebSockets" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop" />
+<ProjectImage alt="Early architecture diagram flow of connecting to Raspberry Pi via WebSockets" src="/static/images/projects/jukebox/brainstorm-architecture-diagram.png" showAlt />
 
 ### Technical Deep Dive: The Detached Frame Challenge
 
@@ -81,7 +81,7 @@ When videos changed quickly, the iframe reference would become detached—the 5-
 
 The design was inspired by **organic, fluid motion**—think lava lamps. I researched video and music player interfaces on Mobbin, then settled on a modern aesthetic featuring frosted glass effects with vivid colours moving in the background (this was well before iOS 26's adoption of the pattern, might I add).
 
-<ProjectImage alt="Animated background showing morphing gradient blobs in purple and violet" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop" />
+<ProjectImage alt="Animated background showing morphing gradient blobs in purple and violet" src="/static/images/projects/jukebox/jukebox-animated-bg-720.gif" showAlt />
 
 ### Design System Architecture
 
@@ -107,7 +107,7 @@ Dynamic seasonal theming demonstrates the power of a semantic token architecture
 - **Halloween** (Orange/Brown): October transformation
 - **Christmas** (Green/Red): December theme with decorative elements
 
-<ProjectImage alt="Three side-by-side screenshots showing default, Halloween, and Christmas themes" src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=1200&h=600&fit=crop" />
+<ProjectImage alt="Three side-by-side screenshots showing default, Halloween, and Christmas themes" src="/static/images/projects/jukebox/halloween-christmas.png" showAlt />
 
 The animated background adapts its entire colour cycle (9 distinct circle colours plus an interactive colour per season) based on the current date, creating unique visual experiences throughout the year.
 
@@ -130,7 +130,7 @@ Implementing harmonious colours that worked in both modes while maintaining the 
 - **Modern patterns**: Moved toward headless UI patterns with Chakra UI v3
 - **Performance**: Better hot module replacement (HMR) and development experience
 
-<ProjectImage alt="Bundle size comparison chart showing 10MB vs 1MB builds" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop" />
+<ProjectImage alt="Bundle size comparison chart showing 13MB vs 1MB builds" src="/static/images/projects/jukebox/file-size-comparison.png" showAlt />
 
 ### Performance Optimisations
 
@@ -174,7 +174,7 @@ Added comprehensive error logging to the database. Any time an error is encounte
 ### v1.5: Infinite Scroll
 Implemented infinite scrolling for the history view, allowing users to browse beyond the initial 30-day window. Combined with the SWR (stale-while-revalidate) migration for better data fetching and caching patterns.
 
-<ProjectImage alt="History view showing infinite scroll with video thumbnails" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop" />
+<ProjectImage alt="History view showing infinite scroll with video thumbnails" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop" showAlt />
 
 ---
 

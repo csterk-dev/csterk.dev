@@ -249,7 +249,7 @@ export const HOME_FEATURED_PROJECTS: ProjectItem[] = [
     name: "R-Jukebox",
     client: "Personal Project",
     tags: ["Real-time WebSocket architecture", "Browser automation & Puppeteer", "Design systems & seasonal theming"],
-    image: "/static/images/projects/jukebox-frame.png",
+    image: "/static/images/projects/jukebox/jukebox-frame.png",
     href: "/projects/jukebox",
     useGradientBg: true
   },
