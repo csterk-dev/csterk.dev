@@ -327,8 +327,8 @@ export const HOME_TOOLKIT_TECH_STACK: TechStackGroup[] = [
 
 export const DEFAULT_SEO_CONFIG = {
   canonical: BASE_URL,
-  description: "Front-End Developer and UI/UX Designer specialising in React, TypeScript, and modern web technologies. Creating delightful user experiences that bridge technical engineering and creative design.",
-  title: "Chris Sterkenburg - Front-End Developer & UI/UX Designer",
+  description: "Front-End Developer and Product Designer specialising in React, TypeScript, and modern web technologies. Creating delightful user experiences that bridge technical engineering and creative design.",
+  title: "Chris Sterkenburg - Front-End Developer & Product Designer",
   ogImage: {
     url: `${BASE_URL}/static/images/og-image.png`,
     width: 1200,
@@ -358,8 +358,8 @@ export const PERSON_STRUCTURED_DATA = {
   name: SITE_OWNER,
   url: BASE_URL,
   image: `${BASE_URL}/static/images/chris.png`,
-  jobTitle: "Front-End Developer & UI/UX Designer",
-  description: "Front-End Developer and UI/UX Designer with a double degree in Computer Science and Creative Industries (Music & Sound). Specializes in React, TypeScript, Next.js, and modern web technologies.",
+  jobTitle: "Front-End Developer & Product Designer",
+  description: "Front-End Developer and Product Designer with a double degree in Computer Science and Creative Industries (Music & Sound). Specializes in React, TypeScript, Next.js, and modern web technologies.",
   alumniOf: {
     "@type": "EducationalOrganization",
     name: "Queensland University of Technology"

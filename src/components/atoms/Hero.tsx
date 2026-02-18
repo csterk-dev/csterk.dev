@@ -299,7 +299,7 @@ export const Hero: FC<HeroProps> = ({
               md: "center"
             }}
           >
-            Creative Front-End Wizard & UI/UX Designer
+            Creative Front-End Wizard & Product Designer
           </Text>
         </Box>
 
