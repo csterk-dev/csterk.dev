@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           bodyContent={
             <VStack align="stretch" gap={4} textAlign="start">
               <Text color="text.secondary" lineHeight="moderate">
-                G'day, I'm Chris. I'm a Front-End Developer and UI/UX Designer who views code as a
+                G'day, I'm Chris. I'm a Front-End Developer and Product Designer who views code as a
                 medium for creativity. My journey began with a curiosity about video games, which quickly merged
                 with my background in film and multimedia.
               </Text>

@@ -1,6 +1,6 @@
 # csterk.dev
 
-Personal portfolio website showcasing my work as a Front-End Developer and UI/UX Designer.
+Personal portfolio website showcasing my work as a Front-End Developer and Product Designer.
 
 🌐 [Check it out here!](https://www.csterk.dev)
 
