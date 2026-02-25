@@ -1,23 +1,24 @@
 import { FC } from "react";
-import { Box, chakra, Flex } from "@chakra-ui/react";
+import { Box, chakra } from "@chakra-ui/react";
 import NextImage from "next/image";
-
 
 const IMAGE_WIDTH = 1425;
 const IMAGE_HEIGHT = 1816;
 
+// paddingBottom % is always relative to element width per CSS spec,
+// guaranteeing the correct aspect ratio regardless of device orientation.
+const ASPECT_PADDING = `${((IMAGE_HEIGHT / IMAGE_WIDTH) * 100).toFixed(4)}%`;
+
 export const ProfilePictureOutlineCard: FC = () => (
-  <Flex
-    aspectRatio={`${IMAGE_WIDTH} / ${IMAGE_HEIGHT}`}
+  <Box
     borderRadius="md"
-    className="group"
-    justify="center"
     maxW="400px"
     overflow="hidden"
-    p={1}
     position="relative"
     w="100%"
   >
+    <Box paddingBottom={ASPECT_PADDING} />
+
     {/* Animated tracing border */}
     <chakra.svg
       as="svg"
@@ -60,22 +61,31 @@ export const ProfilePictureOutlineCard: FC = () => (
     </chakra.svg>
 
     <Box
-      borderRadius="md"
-      height="100%"
-      overflow="hidden"
-      position="relative"
-      width="100%"
+      bottom={0}
+      left={0}
+      p={1}
+      position="absolute"
+      right={0}
+      top={0}
     >
-      <NextImage
-        alt="Profile picture of Chris"
-        sizes="(max-width: 400px) 100vw, 400px"
-        src="/static/images/chris.png"
-        style={{
-          objectFit: "contain",
-          userSelect: "none"
-        }}
-        fill
-      />
+      <Box
+        borderRadius="md"
+        height="100%"
+        overflow="hidden"
+        position="relative"
+        width="100%"
+      >
+        <NextImage
+          alt="Profile picture of Chris"
+          sizes="(max-width: 400px) 100vw, 400px"
+          src="/static/images/chris.png"
+          style={{
+            objectFit: "contain",
+            userSelect: "none"
+          }}
+          fill
+        />
+      </Box>
     </Box>
-  </Flex>
+  </Box>
 );
