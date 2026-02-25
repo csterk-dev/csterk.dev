@@ -40,7 +40,7 @@ export const Footer: FC<StackProps> = (props) => {
             <FooterLinksGroup links={SITE_NAV_ITEMS} />
 
             <Text
-              fontSize="md"
+              fontSize="lg"
               fontWeight="semibold"
               my={2}
               textAlign="center"
