@@ -69,7 +69,7 @@ export const SITE_HEADER_CTA_ITEMS = [
   ...SITE_SOCIAL_ITEMS,
   {
     key: "sterklabs",
-    label: "What is Sterk Labs?",
+    label: "Sterk Labs",
     href: STERK_LABS_URLS
   }
 ];

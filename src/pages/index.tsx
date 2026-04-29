@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 import { Container, Hero, InterestCard, ProfilePictureOutlineCard, ProjectCarousel, Section, SEOConfig, StructuredData } from "@atoms";
 import { CoreCapabilitiesGrid, ExperienceEducationTimelines } from "@molecules";
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import { HOME_FEATURED_PROJECTS, HOME_TOOLKIT_TECH_STACK, PERSON_STRUCTURED_DATA, WEBSITE_STRUCTURED_DATA } from "@constants";
+import { Box, Flex, Link, Text, VStack } from "@chakra-ui/react";
+import { HOME_FEATURED_PROJECTS, HOME_TOOLKIT_TECH_STACK, PERSON_STRUCTURED_DATA, STERK_LABS_URLS, WEBSITE_STRUCTURED_DATA } from "@constants";
 import { ToolkitTechGrid } from "@organisms";
 import { NextPage } from "next";
+import NextLink from "next/link";
 import NextImage from "next/image";
 import { FaCode, FaDrum, FaDumbbell, FaFilm, FaMotorcycle } from "react-icons/fa6";
 
@@ -40,6 +41,16 @@ const Home: NextPage = () => {
                 </Text>
                 , I bridge the gap between technical engineering and creative design. Whether I'm drumming
                 in a band, editing film, or building a React app, my goal remains the same: to create seamless experiences that delight!
+              </Text>
+              <Text color="text.secondary" lineHeight="moderate">
+                Client work runs through
+                {" "}
+                <Link colorPalette="brand" variant="underline" asChild>
+                  <NextLink href={STERK_LABS_URLS} rel="noopener noreferrer" target="_blank">
+                    Sterk Labs
+                  </NextLink>
+                </Link>
+                , my independent technical studio.
               </Text>
             </VStack>
           }

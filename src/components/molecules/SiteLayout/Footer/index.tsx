@@ -1,6 +1,7 @@
-import { Flex, HStack, Stack, StackProps, Text, VStack } from "@chakra-ui/react";
+import { Flex, HStack, Link, Stack, StackProps, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
-import { SITE_NAV_ITEMS, SITE_SOCIAL_ITEMS } from "@constants";
+import NextLink from "next/link";
+import { SITE_NAV_ITEMS, SITE_SOCIAL_ITEMS, STERK_LABS_URLS } from "@constants";
 import { FooterLinksGroup } from "./LinksGroup";
 import { Container } from "@atoms";
 import { allProjects } from "@contentlayer/generated";
@@ -70,6 +71,24 @@ export const Footer: FC<StackProps> = (props) => {
             </Text>
 
             <FooterLinksGroup links={SITE_SOCIAL_ITEMS} />
+
+            <Text
+              color="text.secondary"
+              fontSize="sm"
+              maxW="280px"
+              mt={2}
+              textAlign="center"
+            >
+              For client engagements, I work through
+              {" "}
+              <Link colorPalette="brand" variant="underline" asChild>
+                <NextLink href={STERK_LABS_URLS} rel="noopener noreferrer" target="_blank">
+                  Sterk Labs
+                </NextLink>
+              </Link>
+              {" "}
+              →
+            </Text>
           </VStack>
 
         </Flex>

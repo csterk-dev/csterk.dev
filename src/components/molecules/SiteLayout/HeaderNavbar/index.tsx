@@ -1,4 +1,5 @@
 import { Button, Flex, Grid, HStack, IconButton, StackProps, VisuallyHidden } from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import { FC, useEffect, useMemo, useRef, useState } from "react";
@@ -119,17 +120,32 @@ export const HeaderNavbar: FC<StackProps> = (props) => {
                   variant="tertiary"
                   asChild
                 >
-                  <NextLink href={item.href} target="blank">
+                  <NextLink href={item.href} rel="noopener noreferrer" target="_blank">
                     <VisuallyHidden>{item.label}</VisuallyHidden>
                     <ItemIcon />
                   </NextLink>
                 </IconButton>
               )
             }
+            // Primary action button (Sterk Labs: external)
             return (
               <Button key={item.key} variant="primary" asChild>
-                <NextLink href={item.href}>
-                  {item.label}
+                <NextLink
+                  href={item.href}
+                  rel={item.key === "sterklabs" ? "noopener noreferrer" : undefined}
+                  target={item.key === "sterklabs" ? "_blank" : undefined}
+                >
+                  <HStack
+                    alignItems="center"
+                    as="span"
+                    display="inline-flex"
+                    gap={1.5}
+                  >
+                    {item.label}
+                    {item.key === "sterklabs" ? (
+                      <FiExternalLink size={14} aria-hidden />
+                    ) : null}
+                  </HStack>
                 </NextLink>
               </Button>
             )
