@@ -27,6 +27,7 @@ export const SITE_HOME_URL = "/";
  */
 export const SOCIALS_LINKEDIN_URL = "https://www.linkedin.com/in/chris-sterkenburg";
 export const SOCIALS_GITHUB_URL = "https://github.com/csterk-dev";
+export const STERK_LABS_URLS = "https://sterklabs.com.au";
 
 /**
  * Nav Link items: 
@@ -64,7 +65,14 @@ export const SITE_SOCIAL_ITEMS: LinkItem[] = [
 /**
  * Site header call to action items: 
  */
-export const SITE_HEADER_CTA_ITEMS = SITE_SOCIAL_ITEMS;
+export const SITE_HEADER_CTA_ITEMS = [
+  ...SITE_SOCIAL_ITEMS,
+  {
+    key: "sterklabs",
+    label: "What is Sterk Labs?",
+    href: STERK_LABS_URLS
+  }
+];
 
 
 
