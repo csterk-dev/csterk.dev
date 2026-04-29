@@ -35,7 +35,7 @@ const system = createSystem(defaultConfig, {
       colorPalette: "neutral",
   
       /* Focus + accessibility */
-      "--focus-ring-color": "colors.brand.400",
+      "--focus-ring-color": "colors.accent.primary",
       "--focus-ring-shadow": "shadows.glow.focus",
   
       /* Glow primitives */

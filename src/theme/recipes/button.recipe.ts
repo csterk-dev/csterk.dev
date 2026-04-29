@@ -29,10 +29,9 @@ export const buttonRecipe = defineRecipe({
       primary: {
         bg: "accent.primary",
         color: "text.inverse",
-        boxShadow: "glow.interactive",
 
         _hover: {
-          bg: "interactive.hover",
+          bg: "accent.hover",
           boxShadow: "glow.hover"
         },
 
@@ -63,12 +62,12 @@ export const buttonRecipe = defineRecipe({
         color: "accent.secondary",
 
         _hover: {
-          color: "interactive.hover",
+          color: "accent.hover",
           boxShadow: "glow.subtle"
         },
 
         _active: {
-          color: "interactive.active"
+          color: "accent.active"
         }
       }
     },

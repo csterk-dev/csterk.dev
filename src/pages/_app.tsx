@@ -2,14 +2,17 @@ import type { AppProps } from "next/app";
 import { Provider, Toaster } from "@atoms";
 import { Anta, OpenSans } from "@fonts";
 import { DefaultSeo } from "next-seo";
-import { DEFAULT_SEO_CONFIG, SITE_NAME, SITE_NAME_TEMPLATE, SITE_OWNER } from "@constants";
+import { DEFAULT_SEO_CONFIG, GA_STREAM_ID, SITE_NAME, SITE_NAME_TEMPLATE, SITE_OWNER } from "@constants";
 import { colors } from "@theme";
 import { SiteLayout } from "@molecules";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <div className={`${OpenSans.variable} ${Anta.variable}`}>
+      {GA_STREAM_ID ? <GoogleAnalytics gaId={GA_STREAM_ID} /> : null}
+
       <DefaultSeo
         additionalLinkTags={[
           {
