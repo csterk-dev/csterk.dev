@@ -36,9 +36,7 @@ const surfaceColors = defineSemanticTokens.colors({
   canvas: { value: "{colors.neutral.950}" },
   base: { value: "{colors.neutral.900}" },
   raised: { value: "{colors.neutral.800}" },
-  sunken: { value: "{colors.neutral.950}" },
-  border: { value: "{colors.neutral.700}" },
-  divider: { value: "{colors.neutral.800}" }
+  border: { value: "{colors.neutral.700}" }
 });
 
 /**
@@ -48,35 +46,19 @@ const textColors = defineSemanticTokens.colors({
   primary: { value: "{colors.neutral.100}" },
   secondary: { value: "{colors.neutral.200}" },
   muted: { value: "{colors.neutral.400}" },
-  disabled: { value: "{colors.neutral.500}" },
   inverse: { value: "{colors.neutral.900}" }
 });
 
 /**
  * Semantic accent colors
+ * Includes interactive states (hover/active) so each role has one canonical token.
  */
 const accentColors = defineSemanticTokens.colors({
   primary: { value: "{colors.brand.400}" },
   secondary: { value: "{colors.brand.100}" },
   subtle: { value: "{colors.brand.700}" },
-  muted: { value: "{colors.neutral.400}" }
-});
-
-/**
- * Interactive state colors
- */
-const interactiveColors = defineSemanticTokens.colors({
   hover: { value: "{colors.brand.200}" },
-  active: { value: "{colors.brand.300}" },
-  focus: { value: "{colors.brand.400}" }
-});
-
-/**
- * Glow and emphasis state colors
- */
-const stateColors = defineSemanticTokens.colors({
-  glow: { value: "{colors.brand.400}" },
-  glowStrong: { value: "{colors.brand.300}" }
+  active: { value: "{colors.brand.300}" }
 });
 
 /**
@@ -86,9 +68,7 @@ export const semanticTokens = defineSemanticTokens({
   colors: {
     accent: accentColors,
     brand: brandColors,
-    interactive: interactiveColors,
     neutral: neutralColors,
-    state: stateColors,
     surface: surfaceColors,
     text: textColors
   }

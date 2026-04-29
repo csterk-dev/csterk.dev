@@ -26,20 +26,7 @@ export const textStyles = defineTextStyles({
     }
   },
   "heading/sub-section": {
-    description: "Used for section headings",
-    value: {
-      fontSize: {
-        base: "3xl",
-        md: "4xl"
-      },
-      fontWeight: "bold",
-      lineHeight: "moderate",
-      fontStyle: "normal",
-      fontFamily: "heading"
-    }
-  },
-  "heading/modal": {
-    description: "Used for modal titles",
+    description: "Used for sub-section and modal titles",
     value: {
       fontSize: {
         base: "3xl",
